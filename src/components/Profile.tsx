@@ -5,8 +5,30 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import { User, MapPin, Award, Target, Edit, Instagram, Weight, Ruler, Flame, Heart, Timer, Activity, Wind } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  User,
+  MapPin,
+  Award,
+  Target,
+  Edit,
+  Instagram,
+  Weight,
+  Ruler,
+  Flame,
+  Heart,
+  Timer,
+  Activity,
+  Wind,
+} from "lucide-react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const monthlyStats = [
   { month: "Jun", workouts: 18 },
@@ -20,18 +42,53 @@ const monthlyStats = [
 const achievements = [
   { title: "100 Workouts", emoji: "💯", date: "Oct 15, 2024", rarity: "Rare" },
   { title: "30 Day Streak", emoji: "🔥", date: "Nov 2, 2024", rarity: "Epic" },
-  { title: "PR Crusher", emoji: "🏆", date: "Sep 20, 2024", rarity: "Legendary" },
+  {
+    title: "PR Crusher",
+    emoji: "🏆",
+    date: "Sep 20, 2024",
+    rarity: "Legendary",
+  },
   { title: "Early Bird", emoji: "🌅", date: "Nov 8, 2024", rarity: "Common" },
   { title: "Iron Will", emoji: "💪", date: "Aug 12, 2024", rarity: "Rare" },
-  { title: "Social Butterfly", emoji: "🦋", date: "Oct 28, 2024", rarity: "Common" },
+  {
+    title: "Social Butterfly",
+    emoji: "🦋",
+    date: "Oct 28, 2024",
+    rarity: "Common",
+  },
 ];
 
 const personalRecords = [
-  { metric: "Calories Burned", value: "920 kcal", date: "Nov 12, 2024", icon: Flame },
-  { metric: "Max Heart Rate", value: "185 bpm", date: "Nov 10, 2024", icon: Heart },
-  { metric: "Longest Workout", value: "120 min", date: "Nov 5, 2024", icon: Timer },
-  { metric: "Highest TRIMP", value: "145", date: "Nov 12, 2024", icon: Activity },
-  { metric: "Best VO2 Max", value: "52 ml/kg/min", date: "Nov 12, 2024", icon: Wind },
+  {
+    metric: "Calories Burned",
+    value: "920 kcal",
+    date: "Nov 12, 2024",
+    icon: Flame,
+  },
+  {
+    metric: "Max Heart Rate",
+    value: "185 bpm",
+    date: "Nov 10, 2024",
+    icon: Heart,
+  },
+  {
+    metric: "Longest Workout",
+    value: "120 min",
+    date: "Nov 5, 2024",
+    icon: Timer,
+  },
+  {
+    metric: "Highest TRIMP",
+    value: "145",
+    date: "Nov 12, 2024",
+    icon: Activity,
+  },
+  {
+    metric: "Best VO2 Max",
+    value: "52 ml/kg/min",
+    date: "Nov 12, 2024",
+    icon: Wind,
+  },
 ];
 
 export function Profile() {
@@ -97,7 +154,11 @@ export function Profile() {
                   <XAxis dataKey="month" stroke="#64748b" />
                   <YAxis stroke="#64748b" />
                   <Tooltip />
-                  <Bar dataKey="workouts" fill="#10b981" radius={[8, 8, 0, 0]} />
+                  <Bar
+                    dataKey="workouts"
+                    fill="#10b981"
+                    radius={[8, 8, 0, 0]}
+                  />
                 </BarChart>
               </ResponsiveContainer>
             </Card>
@@ -148,11 +209,26 @@ export function Profile() {
             <h3 className="mb-4">Training Goals</h3>
             <div className="space-y-4">
               {[
-                { goal: "Achieve VO2 Max of 55 ml/kg/min", progress: 92, target: "Dec 2024" },
-                { goal: "Reach weekly TRIMP of 700", progress: 96, target: "Dec 2024" },
-                { goal: "Complete 100 workouts this year", progress: 68, target: "Dec 2024" },
+                {
+                  goal: "Achieve VO2 Max of 55 ml/kg/min",
+                  progress: 92,
+                  target: "Dec 2024",
+                },
+                {
+                  goal: "Reach weekly TRIMP of 700",
+                  progress: 96,
+                  target: "Dec 2024",
+                },
+                {
+                  goal: "Complete 100 workouts this year",
+                  progress: 68,
+                  target: "Dec 2024",
+                },
               ].map((goal, index) => (
-                <div key={index} className="p-4 border border-slate-200 rounded-lg">
+                <div
+                  key={index}
+                  className="p-4 border border-slate-200 rounded-lg"
+                >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <Target className="w-5 h-5 text-emerald-600" />

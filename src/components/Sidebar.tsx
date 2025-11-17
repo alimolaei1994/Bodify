@@ -1,4 +1,12 @@
-import { Home, Dna, ClipboardList, Users, User, TrendingUp, Crown } from "lucide-react";
+import {
+  Home,
+  Dna,
+  ClipboardList,
+  Users,
+  User,
+  TrendingUp,
+  Crown,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
@@ -24,7 +32,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
           <span>AthleteDNA</span>
         </div>
       </div>
-      
+
       <nav className="flex-1 p-4">
         <div className="space-y-2">
           {menuItems.map((item) => {
@@ -41,9 +49,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               >
                 <Icon className="w-5 h-5" />
                 <span className="flex-1 text-left">{item.label}</span>
-                {item.premium && (
-                  <Crown className="w-4 h-4 text-purple-400" />
-                )}
+                {item.premium && <Crown className="w-4 h-4 text-purple-400" />}
               </button>
             );
           })}

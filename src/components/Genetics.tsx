@@ -3,8 +3,28 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Dna, Activity, Zap, Shield, Heart, TrendingUp, Package, CheckCircle, ArrowRight, Crown, Lock, Trophy } from "lucide-react";
-import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from "recharts";
+import {
+  Dna,
+  Activity,
+  Zap,
+  Shield,
+  Heart,
+  TrendingUp,
+  Package,
+  CheckCircle,
+  ArrowRight,
+  Crown,
+  Lock,
+  Trophy,
+} from "lucide-react";
+import {
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Radar,
+  ResponsiveContainer,
+} from "recharts";
 import { useState } from "react";
 
 const geneticTraits = [
@@ -27,7 +47,8 @@ const radarData = [
 const geneticInsights = [
   {
     title: "ACTN3 Gene - Sprint Performance",
-    description: "You have the RR variant, associated with elite sprint and power performance.",
+    description:
+      "You have the RR variant, associated with elite sprint and power performance.",
     recommendation: "Focus on explosive movements and power-based exercises.",
     icon: Zap,
     badge: "Advantage",
@@ -35,19 +56,23 @@ const geneticInsights = [
   {
     title: "ACE Gene - Endurance Capacity",
     description: "Your II genotype indicates excellent endurance potential.",
-    recommendation: "Long-distance training will yield optimal results for you.",
+    recommendation:
+      "Long-distance training will yield optimal results for you.",
     icon: Activity,
   },
   {
     title: "COL1A1 Gene - Injury Risk",
-    description: "Moderate risk variant detected. Enhanced recovery protocols recommended.",
-    recommendation: "Prioritize proper warm-up and include mobility work in your routine.",
+    description:
+      "Moderate risk variant detected. Enhanced recovery protocols recommended.",
+    recommendation:
+      "Prioritize proper warm-up and include mobility work in your routine.",
     icon: Shield,
   },
   {
     title: "PPARGC1A Gene - Training Response",
     description: "Your variant shows high training adaptability.",
-    recommendation: "Progressive overload will be particularly effective for you.",
+    recommendation:
+      "Progressive overload will be particularly effective for you.",
     icon: TrendingUp,
   },
 ];
@@ -56,28 +81,32 @@ const enrollmentSteps = [
   {
     step: 1,
     title: "Order Your DNA Kit",
-    description: "Purchase your genetic testing kit and we'll ship it to your address within 3-5 business days.",
+    description:
+      "Purchase your genetic testing kit and we'll ship it to your address within 3-5 business days.",
     icon: Package,
     status: "pending",
   },
   {
     step: 2,
     title: "Collect Your Sample",
-    description: "Simple cheek swab collection at home. Takes less than 2 minutes with easy instructions.",
+    description:
+      "Simple cheek swab collection at home. Takes less than 2 minutes with easy instructions.",
     icon: Dna,
     status: "pending",
   },
   {
     step: 3,
     title: "Send It Back",
-    description: "Use the prepaid shipping label to send your sample to our certified lab.",
+    description:
+      "Use the prepaid shipping label to send your sample to our certified lab.",
     icon: CheckCircle,
     status: "pending",
   },
   {
     step: 4,
     title: "Get Your Results",
-    description: "Receive detailed genetic report in 4-6 weeks with personalized recommendations.",
+    description:
+      "Receive detailed genetic report in 4-6 weeks with personalized recommendations.",
     icon: TrendingUp,
     status: "pending",
   },
@@ -85,7 +114,9 @@ const enrollmentSteps = [
 
 export function Genetics() {
   const [isPremium, setIsPremium] = useState(false); // Set to true to see premium view
-  const [testStatus, setTestStatus] = useState<'not-enrolled' | 'kit-ordered' | 'sample-sent' | 'results-ready'>('not-enrolled');
+  const [testStatus, setTestStatus] = useState<
+    "not-enrolled" | "kit-ordered" | "sample-sent" | "results-ready"
+  >("not-enrolled");
 
   // Free user view - Enrollment flow
   if (!isPremium) {
@@ -98,7 +129,8 @@ export function Genetics() {
           </div>
           <h1>Unlock Your Genetic Potential</h1>
           <p className="text-slate-600">
-            Discover how your DNA influences your fitness, nutrition, and athletic performance
+            Discover how your DNA influences your fitness, nutrition, and
+            athletic performance
           </p>
         </div>
 
@@ -114,16 +146,19 @@ export function Genetics() {
           <div className="relative z-10">
             <h2 className="text-purple-900 mb-4">Why Genetic Testing?</h2>
             <p className="text-purple-700 mb-6 max-w-3xl">
-              Your DNA holds the key to understanding your unique athletic potential. Our comprehensive genetic analysis 
-              examines genes related to strength, endurance, recovery, metabolism, and injury risk - giving you science-backed 
-              insights to optimize your training and nutrition.
+              Your DNA holds the key to understanding your unique athletic
+              potential. Our comprehensive genetic analysis examines genes
+              related to strength, endurance, recovery, metabolism, and injury
+              risk - giving you science-backed insights to optimize your
+              training and nutrition.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div className="p-4 bg-white rounded-lg border border-purple-200">
                 <div className="text-3xl mb-2">🎯</div>
                 <h4 className="text-purple-900 mb-1">Personalized Plans</h4>
                 <p className="text-purple-700 text-sm">
-                  Get workout and nutrition plans tailored to your genetic makeup
+                  Get workout and nutrition plans tailored to your genetic
+                  makeup
                 </p>
               </div>
               <div className="p-4 bg-white rounded-lg border border-purple-200">
@@ -137,7 +172,8 @@ export function Genetics() {
                 <div className="text-3xl mb-2">🏆</div>
                 <h4 className="text-purple-900 mb-1">Expert Guidance</h4>
                 <p className="text-purple-700 text-sm">
-                  Work with nutritionists and trainers specialized in genetic-based training
+                  Work with nutritionists and trainers specialized in
+                  genetic-based training
                 </p>
               </div>
             </div>
@@ -187,7 +223,10 @@ export function Genetics() {
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <li key={index} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                    <li
+                      key={index}
+                      className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg"
+                    >
                       <Icon className="w-5 h-5 text-purple-600" />
                       <span className="text-slate-700">{item.label}</span>
                     </li>
@@ -205,7 +244,10 @@ export function Genetics() {
                   "Food Sensitivities & Intolerances",
                   "Response to Supplement and Doping",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                  <li
+                    key={index}
+                    className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg"
+                  >
                     <CheckCircle className="w-5 h-5 text-purple-600" />
                     <span className="text-slate-700">{item}</span>
                   </li>
@@ -218,7 +260,9 @@ export function Genetics() {
         {/* Pricing */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="p-6 border-2 border-slate-200">
-            <Badge variant="secondary" className="mb-4">One-Time Test</Badge>
+            <Badge variant="secondary" className="mb-4">
+              One-Time Test
+            </Badge>
             <h3 className="mb-2">DNA Kit Only</h3>
             <div className="mb-4">
               <span className="text-slate-900 text-4xl">$199</span>
@@ -231,7 +275,10 @@ export function Genetics() {
                 "Basic personalized recommendations",
                 "Access to genetic profile dashboard",
               ].map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-slate-700">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-slate-700"
+                >
                   <CheckCircle className="w-4 h-4 text-emerald-600" />
                   <span className="text-sm">{feature}</span>
                 </li>
@@ -262,7 +309,10 @@ export function Genetics() {
                 "Advanced progress tracking & analytics",
                 "Priority support & updates",
               ].map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-purple-900">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-purple-900"
+                >
                   <CheckCircle className="w-4 h-4 text-purple-600" />
                   <span className="text-sm">{feature}</span>
                 </li>
@@ -413,18 +463,19 @@ export function Genetics() {
       <Card className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200">
         <div className="flex items-start justify-between">
           <div>
-            <h3 className="text-emerald-900 mb-2">Your Personalized Plans Are Ready!</h3>
+            <h3 className="text-emerald-900 mb-2">
+              Your Personalized Plans Are Ready!
+            </h3>
             <p className="text-emerald-700 mb-4">
-              Based on your genetic profile and smartwatch data, our experts have created custom workout and nutrition plans just for you.
+              Based on your genetic profile and smartwatch data, our experts
+              have created custom workout and nutrition plans just for you.
             </p>
             <Button className="bg-emerald-600 hover:bg-emerald-700">
               View Your Personalized Plans
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
-          <div className="text-6xl">
-            📋
-          </div>
+          <div className="text-6xl">📋</div>
         </div>
       </Card>
     </div>

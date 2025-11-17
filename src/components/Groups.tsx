@@ -4,7 +4,18 @@ import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Progress } from "./ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import { Users, Crown, Trophy, Flame, TrendingUp, MessageCircle, Calendar, Target, Dna, Plus } from "lucide-react";
+import {
+  Users,
+  Crown,
+  Trophy,
+  Flame,
+  TrendingUp,
+  MessageCircle,
+  Calendar,
+  Target,
+  Dna,
+  Plus,
+} from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const myGroups = [
@@ -23,7 +34,8 @@ const myGroups = [
   {
     id: 2,
     name: "Endurance Warriors",
-    description: "ACE II genotype carriers focused on cardiovascular performance",
+    description:
+      "ACE II genotype carriers focused on cardiovascular performance",
     members: 31,
     geneticMatch: 88,
     category: "Endurance",
@@ -38,7 +50,8 @@ const suggestedGroups = [
   {
     id: 3,
     name: "Fast Recovery Squad",
-    description: "Athletes with optimal recovery genes and similar training schedules",
+    description:
+      "Athletes with optimal recovery genes and similar training schedules",
     members: 18,
     geneticMatch: 85,
     category: "Recovery",
@@ -56,12 +69,55 @@ const suggestedGroups = [
 ];
 
 const groupMembers = [
-  { name: "Sarah Martinez", avatar: "SM", rank: 1, points: 2850, streak: 14, status: "online" },
-  { name: "Marcus Johnson", avatar: "MJ", rank: 2, points: 2720, streak: 12, status: "online" },
-  { name: "You (John Doe)", avatar: "JD", rank: 3, points: 2650, streak: 14, status: "online", isUser: true },
-  { name: "Emily Chen", avatar: "EC", rank: 4, points: 2580, streak: 11, status: "offline" },
-  { name: "David Thompson", avatar: "DT", rank: 5, points: 2420, streak: 9, status: "online" },
-  { name: "Jessica Park", avatar: "JP", rank: 6, points: 2350, streak: 8, status: "offline" },
+  {
+    name: "Sarah Martinez",
+    avatar: "SM",
+    rank: 1,
+    points: 2850,
+    streak: 14,
+    status: "online",
+  },
+  {
+    name: "Marcus Johnson",
+    avatar: "MJ",
+    rank: 2,
+    points: 2720,
+    streak: 12,
+    status: "online",
+  },
+  {
+    name: "You (John Doe)",
+    avatar: "JD",
+    rank: 3,
+    points: 2650,
+    streak: 14,
+    status: "online",
+    isUser: true,
+  },
+  {
+    name: "Emily Chen",
+    avatar: "EC",
+    rank: 4,
+    points: 2580,
+    streak: 11,
+    status: "offline",
+  },
+  {
+    name: "David Thompson",
+    avatar: "DT",
+    rank: 5,
+    points: 2420,
+    streak: 9,
+    status: "online",
+  },
+  {
+    name: "Jessica Park",
+    avatar: "JP",
+    rank: 6,
+    points: 2350,
+    streak: 8,
+    status: "offline",
+  },
 ];
 
 const groupPosts = [
@@ -69,7 +125,8 @@ const groupPosts = [
     user: "Sarah Martinez",
     avatar: "SM",
     time: "2 hours ago",
-    content: "Just hit a new VO2 max record! 54 ml/kg/min! Thanks for the motivation everyone 💪",
+    content:
+      "Just hit a new VO2 max record! 54 ml/kg/min! Thanks for the motivation everyone 💪",
     likes: 12,
     comments: 5,
   },
@@ -77,7 +134,8 @@ const groupPosts = [
     user: "Marcus Johnson",
     avatar: "MJ",
     time: "5 hours ago",
-    content: "Who's joining the group cardio session tomorrow at 6 PM? Let's crush it together!",
+    content:
+      "Who's joining the group cardio session tomorrow at 6 PM? Let's crush it together!",
     likes: 8,
     comments: 7,
   },
@@ -85,7 +143,8 @@ const groupPosts = [
     user: "Emily Chen",
     avatar: "EC",
     time: "1 day ago",
-    content: "Love how our genetic profiles help us understand each other's challenges. This group is amazing!",
+    content:
+      "Love how our genetic profiles help us understand each other's challenges. This group is amazing!",
     likes: 15,
     comments: 4,
   },
@@ -98,11 +157,36 @@ const groupChallenge = {
   endsIn: "3 days",
   participants: 24,
   leaderboard: [
-    { name: "Sarah Martinez", avatar: "SM", progress: 685, rank: 1, unit: "TRIMP" },
-    { name: "You", avatar: "JD", progress: 671, rank: 2, isUser: true, unit: "TRIMP" },
-    { name: "Marcus Johnson", avatar: "MJ", progress: 658, rank: 3, unit: "TRIMP" },
+    {
+      name: "Sarah Martinez",
+      avatar: "SM",
+      progress: 685,
+      rank: 1,
+      unit: "TRIMP",
+    },
+    {
+      name: "You",
+      avatar: "JD",
+      progress: 671,
+      rank: 2,
+      isUser: true,
+      unit: "TRIMP",
+    },
+    {
+      name: "Marcus Johnson",
+      avatar: "MJ",
+      progress: 658,
+      rank: 3,
+      unit: "TRIMP",
+    },
     { name: "Emily Chen", avatar: "EC", progress: 645, rank: 4, unit: "TRIMP" },
-    { name: "David Thompson", avatar: "DT", progress: 612, rank: 5, unit: "TRIMP" },
+    {
+      name: "David Thompson",
+      avatar: "DT",
+      progress: 612,
+      rank: 5,
+      unit: "TRIMP",
+    },
   ],
 };
 
@@ -128,10 +212,15 @@ export function Groups() {
       {/* Active Groups */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {myGroups.map((group) => (
-          <Card key={group.id} className="p-6 hover:shadow-lg transition-shadow">
+          <Card
+            key={group.id}
+            className="p-6 hover:shadow-lg transition-shadow"
+          >
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className={`w-12 h-12 bg-${group.color}-100 rounded-full flex items-center justify-center`}>
+                <div
+                  className={`w-12 h-12 bg-${group.color}-100 rounded-full flex items-center justify-center`}
+                >
                   <Users className={`w-6 h-6 text-${group.color}-600`} />
                 </div>
                 <div>
@@ -161,7 +250,9 @@ export function Groups() {
                 <h4 className="text-purple-900">{group.activeChallenge}</h4>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-purple-700">Your rank: #{group.yourRank}</span>
+                <span className="text-purple-700">
+                  Your rank: #{group.yourRank}
+                </span>
                 <Badge variant="secondary">Active</Badge>
               </div>
             </div>
@@ -191,20 +282,28 @@ export function Groups() {
               className="p-5 border-2 border-slate-200 rounded-lg hover:border-emerald-500 transition-colors"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className={`w-10 h-10 bg-${group.color}-100 rounded-full flex items-center justify-center`}>
+                <div
+                  className={`w-10 h-10 bg-${group.color}-100 rounded-full flex items-center justify-center`}
+                >
                   <Users className={`w-5 h-5 text-${group.color}-600`} />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-slate-900 mb-1">{group.name}</h4>
-                  <Badge variant="secondary" className="text-xs">{group.category}</Badge>
+                  <Badge variant="secondary" className="text-xs">
+                    {group.category}
+                  </Badge>
                 </div>
               </div>
               <p className="text-slate-600 text-sm mb-4">{group.description}</p>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-slate-600 text-sm">{group.members} members</span>
+                <span className="text-slate-600 text-sm">
+                  {group.members} members
+                </span>
                 <div className="flex items-center gap-1">
                   <Dna className="w-4 h-4 text-emerald-600" />
-                  <span className="text-emerald-900 text-sm">{group.geneticMatch}% match</span>
+                  <span className="text-emerald-900 text-sm">
+                    {group.geneticMatch}% match
+                  </span>
                 </div>
               </div>
               <Button variant="outline" className="w-full">
@@ -227,7 +326,10 @@ export function Groups() {
 
             <TabsContent value="feed" className="space-y-4 mt-4">
               {groupPosts.map((post, index) => (
-                <div key={index} className="p-4 border border-slate-200 rounded-lg">
+                <div
+                  key={index}
+                  className="p-4 border border-slate-200 rounded-lg"
+                >
                   <div className="flex items-start gap-3">
                     <Avatar className="w-10 h-10">
                       <AvatarFallback className="bg-emerald-600 text-white">
@@ -238,7 +340,9 @@ export function Groups() {
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="text-slate-900">{post.user}</h4>
                         <span className="text-slate-500 text-sm">•</span>
-                        <span className="text-slate-500 text-sm">{post.time}</span>
+                        <span className="text-slate-500 text-sm">
+                          {post.time}
+                        </span>
                       </div>
                       <p className="text-slate-700 mb-3">{post.content}</p>
                       <div className="flex items-center gap-4 text-slate-600 text-sm">
@@ -261,14 +365,18 @@ export function Groups() {
                   <Trophy className="w-8 h-8 text-amber-600" />
                   <div>
                     <h3 className="text-amber-900">{groupChallenge.title}</h3>
-                    <p className="text-amber-700 text-sm">{groupChallenge.description}</p>
+                    <p className="text-amber-700 text-sm">
+                      {groupChallenge.description}
+                    </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="p-3 bg-white rounded-lg text-center">
                     <p className="text-amber-600 text-sm mb-1">Prize</p>
-                    <p className="text-amber-900">{groupChallenge.prize.split('+')[0]}</p>
+                    <p className="text-amber-900">
+                      {groupChallenge.prize.split("+")[0]}
+                    </p>
                   </div>
                   <div className="p-3 bg-white rounded-lg text-center">
                     <p className="text-amber-600 text-sm mb-1">Ends In</p>
@@ -276,7 +384,9 @@ export function Groups() {
                   </div>
                   <div className="p-3 bg-white rounded-lg text-center">
                     <p className="text-amber-600 text-sm mb-1">Participants</p>
-                    <p className="text-amber-900">{groupChallenge.participants}</p>
+                    <p className="text-amber-900">
+                      {groupChallenge.participants}
+                    </p>
                   </div>
                 </div>
 
@@ -296,27 +406,46 @@ export function Groups() {
                           participant.rank === 1
                             ? "bg-amber-500 text-white"
                             : participant.rank === 2
-                            ? "bg-slate-400 text-white"
-                            : participant.rank === 3
-                            ? "bg-orange-600 text-white"
-                            : "bg-slate-300 text-slate-700"
+                              ? "bg-slate-400 text-white"
+                              : participant.rank === 3
+                                ? "bg-orange-600 text-white"
+                                : "bg-slate-300 text-slate-700"
                         }`}
                       >
                         {participant.rank}
                       </div>
                       <Avatar className="w-10 h-10">
-                        <AvatarFallback className={participant.isUser ? "bg-emerald-600 text-white" : "bg-slate-600 text-white"}>
+                        <AvatarFallback
+                          className={
+                            participant.isUser
+                              ? "bg-emerald-600 text-white"
+                              : "bg-slate-600 text-white"
+                          }
+                        >
                           {participant.avatar}
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
-                        <h4 className={participant.isUser ? "text-emerald-900" : "text-slate-900"}>
+                        <h4
+                          className={
+                            participant.isUser
+                              ? "text-emerald-900"
+                              : "text-slate-900"
+                          }
+                        >
                           {participant.name}
                         </h4>
                       </div>
                       <div className="text-right">
-                        <p className={participant.isUser ? "text-emerald-900" : "text-slate-900"}>
-                          {participant.progress.toLocaleString()} {participant.unit}
+                        <p
+                          className={
+                            participant.isUser
+                              ? "text-emerald-900"
+                              : "text-slate-900"
+                          }
+                        >
+                          {participant.progress.toLocaleString()}{" "}
+                          {participant.unit}
                         </p>
                       </div>
                     </div>
@@ -328,10 +457,30 @@ export function Groups() {
             <TabsContent value="schedule" className="mt-4">
               <div className="space-y-3">
                 {[
-                  { day: "Tomorrow", time: "6:00 PM", type: "VO2 Max Intervals Session", participants: 12 },
-                  { day: "Friday", time: "7:00 AM", type: "Endurance Training", participants: 8 },
-                  { day: "Saturday", time: "10:00 AM", type: "Long Distance Run", participants: 15 },
-                  { day: "Monday", time: "6:30 PM", type: "Threshold Training", participants: 10 },
+                  {
+                    day: "Tomorrow",
+                    time: "6:00 PM",
+                    type: "VO2 Max Intervals Session",
+                    participants: 12,
+                  },
+                  {
+                    day: "Friday",
+                    time: "7:00 AM",
+                    type: "Endurance Training",
+                    participants: 8,
+                  },
+                  {
+                    day: "Saturday",
+                    time: "10:00 AM",
+                    type: "Long Distance Run",
+                    participants: 15,
+                  },
+                  {
+                    day: "Monday",
+                    time: "6:30 PM",
+                    type: "Threshold Training",
+                    participants: 10,
+                  },
                 ].map((session, index) => (
                   <Card key={index} className="p-4">
                     <div className="flex items-center justify-between">
@@ -360,7 +509,8 @@ export function Groups() {
           <Card className="p-6">
             <h3 className="mb-4">Group Members</h3>
             <p className="text-slate-600 text-sm mb-4">
-              24 members • {groupMembers.filter(m => m.status === "online").length} online
+              24 members •{" "}
+              {groupMembers.filter((m) => m.status === "online").length} online
             </p>
             <div className="space-y-3">
               {groupMembers.map((member, index) => (
@@ -372,7 +522,13 @@ export function Groups() {
                 >
                   <div className="relative">
                     <Avatar className="w-10 h-10">
-                      <AvatarFallback className={member.isUser ? "bg-emerald-600 text-white" : "bg-slate-600 text-white"}>
+                      <AvatarFallback
+                        className={
+                          member.isUser
+                            ? "bg-emerald-600 text-white"
+                            : "bg-slate-600 text-white"
+                        }
+                      >
                         {member.avatar}
                       </AvatarFallback>
                     </Avatar>
@@ -381,7 +537,9 @@ export function Groups() {
                     )}
                   </div>
                   <div className="flex-1">
-                    <h4 className={`text-sm ${member.isUser ? "text-emerald-900" : "text-slate-900"}`}>
+                    <h4
+                      className={`text-sm ${member.isUser ? "text-emerald-900" : "text-slate-900"}`}
+                    >
                       {member.name}
                     </h4>
                     <div className="flex items-center gap-2 text-xs text-slate-600">

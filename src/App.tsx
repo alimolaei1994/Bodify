@@ -28,10 +28,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <Sidebar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-      />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="ml-64 p-8">{renderContent()}</div>
     </div>
   );

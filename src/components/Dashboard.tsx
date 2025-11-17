@@ -1,30 +1,168 @@
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Activity, Flame, Heart, Timer, Trophy, TrendingUp, Crown, Medal, Zap, Watch, Wind } from "lucide-react";
+import {
+  Activity,
+  Flame,
+  Heart,
+  Timer,
+  Trophy,
+  TrendingUp,
+  Crown,
+  Medal,
+  Zap,
+  Watch,
+  Wind,
+} from "lucide-react";
 import { Progress } from "./ui/progress";
-import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  AreaChart,
+  Area,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 
 const weeklyData = [
-  { day: "Mon", calories: 520, heartRate: 142, duration: 45, trimp: 82, vo2max: 48 },
-  { day: "Tue", calories: 680, heartRate: 155, duration: 60, trimp: 105, vo2max: 49 },
-  { day: "Wed", calories: 450, heartRate: 138, duration: 40, trimp: 68, vo2max: 47 },
-  { day: "Thu", calories: 820, heartRate: 168, duration: 75, trimp: 128, vo2max: 51 },
-  { day: "Fri", calories: 590, heartRate: 148, duration: 50, trimp: 88, vo2max: 48 },
-  { day: "Sat", calories: 920, heartRate: 172, duration: 90, trimp: 145, vo2max: 52 },
-  { day: "Sun", calories: 340, heartRate: 128, duration: 35, trimp: 55, vo2max: 46 },
+  {
+    day: "Mon",
+    calories: 520,
+    heartRate: 142,
+    duration: 45,
+    trimp: 82,
+    vo2max: 48,
+  },
+  {
+    day: "Tue",
+    calories: 680,
+    heartRate: 155,
+    duration: 60,
+    trimp: 105,
+    vo2max: 49,
+  },
+  {
+    day: "Wed",
+    calories: 450,
+    heartRate: 138,
+    duration: 40,
+    trimp: 68,
+    vo2max: 47,
+  },
+  {
+    day: "Thu",
+    calories: 820,
+    heartRate: 168,
+    duration: 75,
+    trimp: 128,
+    vo2max: 51,
+  },
+  {
+    day: "Fri",
+    calories: 590,
+    heartRate: 148,
+    duration: 50,
+    trimp: 88,
+    vo2max: 48,
+  },
+  {
+    day: "Sat",
+    calories: 920,
+    heartRate: 172,
+    duration: 90,
+    trimp: 145,
+    vo2max: 52,
+  },
+  {
+    day: "Sun",
+    calories: 340,
+    heartRate: 128,
+    duration: 35,
+    trimp: 55,
+    vo2max: 46,
+  },
 ];
 
 const weeklyLeaderboard = [
-  { rank: 1, name: "Sarah Martinez", avatar: "SM", points: 2850, badge: "🔥", trimp: 685, vo2max: 54 },
-  { rank: 2, name: "Marcus Johnson", avatar: "MJ", points: 2720, badge: "💪", trimp: 658, vo2max: 53 },
-  { rank: 3, name: "You (John Doe)", avatar: "JD", points: 2650, badge: "⚡", trimp: 671, vo2max: 50, isUser: true },
-  { rank: 4, name: "Emily Chen", avatar: "EC", points: 2580, badge: "🏃", trimp: 645, vo2max: 51 },
-  { rank: 5, name: "David Thompson", avatar: "DT", points: 2420, badge: "💯", trimp: 612, vo2max: 49 },
-  { rank: 6, name: "Jessica Park", avatar: "JP", points: 2350, badge: "🎯", trimp: 598, vo2max: 48 },
-  { rank: 7, name: "Ryan Foster", avatar: "RF", points: 2280, badge: "⭐", trimp: 585, vo2max: 47 },
-  { rank: 8, name: "Maya Patel", avatar: "MP", points: 2190, badge: "🚀", trimp: 568, vo2max: 46 },
+  {
+    rank: 1,
+    name: "Sarah Martinez",
+    avatar: "SM",
+    points: 2850,
+    badge: "🔥",
+    trimp: 685,
+    vo2max: 54,
+  },
+  {
+    rank: 2,
+    name: "Marcus Johnson",
+    avatar: "MJ",
+    points: 2720,
+    badge: "💪",
+    trimp: 658,
+    vo2max: 53,
+  },
+  {
+    rank: 3,
+    name: "You (John Doe)",
+    avatar: "JD",
+    points: 2650,
+    badge: "⚡",
+    trimp: 671,
+    vo2max: 50,
+    isUser: true,
+  },
+  {
+    rank: 4,
+    name: "Emily Chen",
+    avatar: "EC",
+    points: 2580,
+    badge: "🏃",
+    trimp: 645,
+    vo2max: 51,
+  },
+  {
+    rank: 5,
+    name: "David Thompson",
+    avatar: "DT",
+    points: 2420,
+    badge: "💯",
+    trimp: 612,
+    vo2max: 49,
+  },
+  {
+    rank: 6,
+    name: "Jessica Park",
+    avatar: "JP",
+    points: 2350,
+    badge: "🎯",
+    trimp: 598,
+    vo2max: 48,
+  },
+  {
+    rank: 7,
+    name: "Ryan Foster",
+    avatar: "RF",
+    points: 2280,
+    badge: "⭐",
+    trimp: 585,
+    vo2max: 47,
+  },
+  {
+    rank: 8,
+    name: "Maya Patel",
+    avatar: "MP",
+    points: 2190,
+    badge: "🚀",
+    trimp: 568,
+    vo2max: 46,
+  },
 ];
 
 const activeChallenges = [
@@ -75,7 +213,9 @@ export function Dashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h1>Welcome back, John!</h1>
-          <p className="text-slate-600">Your weekly performance and challenges</p>
+          <p className="text-slate-600">
+            Your weekly performance and challenges
+          </p>
         </div>
         <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-lg border border-emerald-200">
           <Watch className="w-5 h-5 text-emerald-600" />
@@ -232,7 +372,9 @@ export function Dashboard() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h3>Weekly Challenges</h3>
-            <p className="text-slate-600 text-sm">Compete with others and earn points</p>
+            <p className="text-slate-600 text-sm">
+              Compete with others and earn points
+            </p>
           </div>
           <Badge className="bg-amber-100 text-amber-900 hover:bg-amber-100">
             <Trophy className="w-3 h-3 mr-1" />
@@ -243,8 +385,9 @@ export function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {activeChallenges.map((challenge, index) => {
             const Icon = challenge.icon;
-            const progressPercent = (challenge.yourProgress / challenge.leaderProgress) * 100;
-            
+            const progressPercent =
+              (challenge.yourProgress / challenge.leaderProgress) * 100;
+
             return (
               <div
                 key={index}
@@ -255,21 +398,29 @@ export function Dashboard() {
                 }`}
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className={`w-12 h-12 bg-${challenge.color}-100 rounded-full flex items-center justify-center`}>
+                  <div
+                    className={`w-12 h-12 bg-${challenge.color}-100 rounded-full flex items-center justify-center`}
+                  >
                     <Icon className={`w-6 h-6 text-${challenge.color}-600`} />
                   </div>
                   {challenge.yourRank === 1 && (
                     <Crown className="w-6 h-6 text-amber-500" />
                   )}
                 </div>
-                
+
                 <h4 className="text-slate-900 mb-1">{challenge.title}</h4>
-                <p className="text-slate-600 text-sm mb-4">{challenge.description}</p>
+                <p className="text-slate-600 text-sm mb-4">
+                  {challenge.description}
+                </p>
 
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-600">Your Rank</span>
-                    <Badge variant={challenge.yourRank <= 3 ? "default" : "secondary"}>
+                    <Badge
+                      variant={
+                        challenge.yourRank <= 3 ? "default" : "secondary"
+                      }
+                    >
                       #{challenge.yourRank}
                     </Badge>
                   </div>
@@ -277,7 +428,10 @@ export function Dashboard() {
                   <div className="space-y-1">
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600">Progress</span>
-                      <span className="text-slate-900">{challenge.yourProgress.toLocaleString()} {challenge.unit}</span>
+                      <span className="text-slate-900">
+                        {challenge.yourProgress.toLocaleString()}{" "}
+                        {challenge.unit}
+                      </span>
                     </div>
                     <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div
@@ -286,14 +440,17 @@ export function Dashboard() {
                       />
                     </div>
                     <p className="text-slate-500 text-xs">
-                      Leader: {challenge.leaderProgress.toLocaleString()} {challenge.unit}
+                      Leader: {challenge.leaderProgress.toLocaleString()}{" "}
+                      {challenge.unit}
                     </p>
                   </div>
 
                   <div className="pt-3 border-t border-slate-200">
                     <div className="flex justify-between items-center text-sm">
                       <span className="text-slate-600">Prize</span>
-                      <span className="text-emerald-600">{challenge.prize}</span>
+                      <span className="text-emerald-600">
+                        {challenge.prize}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -324,8 +481,8 @@ export function Dashboard() {
                   user.isUser
                     ? "bg-emerald-50 border-2 border-emerald-500"
                     : user.rank <= 3
-                    ? "bg-amber-50 border border-amber-200"
-                    : "bg-slate-50 border border-slate-200"
+                      ? "bg-amber-50 border border-amber-200"
+                      : "bg-slate-50 border border-slate-200"
                 }`}
               >
                 <div className="flex items-center gap-3 flex-1">
@@ -338,10 +495,10 @@ export function Dashboard() {
                         user.rank === 1
                           ? "bg-amber-500 text-white"
                           : user.rank === 2
-                          ? "bg-slate-400 text-white"
-                          : user.rank === 3
-                          ? "bg-orange-600 text-white"
-                          : "bg-slate-300 text-slate-700"
+                            ? "bg-slate-400 text-white"
+                            : user.rank === 3
+                              ? "bg-orange-600 text-white"
+                              : "bg-slate-300 text-slate-700"
                       }`}
                     >
                       {user.rank}
@@ -349,14 +506,24 @@ export function Dashboard() {
                   </div>
 
                   <Avatar className="w-10 h-10">
-                    <AvatarFallback className={user.isUser ? "bg-emerald-600 text-white" : "bg-slate-600 text-white"}>
+                    <AvatarFallback
+                      className={
+                        user.isUser
+                          ? "bg-emerald-600 text-white"
+                          : "bg-slate-600 text-white"
+                      }
+                    >
                       {user.avatar}
                     </AvatarFallback>
                   </Avatar>
 
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h4 className={user.isUser ? "text-emerald-900" : "text-slate-900"}>
+                      <h4
+                        className={
+                          user.isUser ? "text-emerald-900" : "text-slate-900"
+                        }
+                      >
                         {user.name}
                       </h4>
                       <span className="text-lg">{user.badge}</span>
@@ -367,7 +534,9 @@ export function Dashboard() {
                   </div>
 
                   <div className="text-right">
-                    <p className={`${user.isUser ? "text-emerald-900" : "text-slate-900"}`}>
+                    <p
+                      className={`${user.isUser ? "text-emerald-900" : "text-slate-900"}`}
+                    >
                       {user.points.toLocaleString()} pts
                     </p>
                   </div>
@@ -396,7 +565,9 @@ export function Dashboard() {
                 <span className="text-slate-900">82%</span>
               </div>
               <Progress value={82} className="h-3" />
-              <p className="text-slate-500 text-xs mt-1">1,200 more calories to goal</p>
+              <p className="text-slate-500 text-xs mt-1">
+                1,200 more calories to goal
+              </p>
             </div>
 
             <div className="space-y-2">
@@ -404,7 +575,11 @@ export function Dashboard() {
               {[
                 { icon: "🔥", text: "7 Day Streak", time: "Today" },
                 { icon: "🏆", text: "Top 5 Finisher", time: "Yesterday" },
-                { icon: "⚡", text: "2,000 Points Milestone", time: "2 days ago" },
+                {
+                  icon: "⚡",
+                  text: "2,000 Points Milestone",
+                  time: "2 days ago",
+                },
               ].map((achievement, index) => (
                 <div
                   key={index}
@@ -436,7 +611,9 @@ export function Dashboard() {
               <h3 className="text-purple-900">Unlock Your Genetic Potential</h3>
             </div>
             <p className="text-purple-700 mb-4">
-              Get personalized workout and nutrition plans based on your DNA. Join exclusive groups with similar genetic traits and get expert guidance.
+              Get personalized workout and nutrition plans based on your DNA.
+              Join exclusive groups with similar genetic traits and get expert
+              guidance.
             </p>
             <ul className="space-y-2 mb-6">
               {[
@@ -445,7 +622,10 @@ export function Dashboard() {
                 "Personalized plans from expert trainers & nutritionists",
                 "Exclusive community groups with similar traits",
               ].map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-purple-900 text-sm">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-purple-900 text-sm"
+                >
                   <Medal className="w-4 h-4 text-purple-600" />
                   <span>{feature}</span>
                 </li>
@@ -455,9 +635,7 @@ export function Dashboard() {
               Upgrade to Premium - Start Your DNA Test
             </Button>
           </div>
-          <div className="hidden lg:block text-8xl ml-8">
-            🧬
-          </div>
+          <div className="hidden lg:block text-8xl ml-8">🧬</div>
         </div>
       </Card>
     </div>
