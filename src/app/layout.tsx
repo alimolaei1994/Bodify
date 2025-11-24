@@ -1,18 +1,20 @@
-import type { Metadata } from "next"
-import type { ReactNode } from "react"
-
-import "@/index.css"
+import type { Metadata } from "next";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
-	title: "AthleteDNA",
-	description: "Genetics and fitness social dashboard"
-}
+  title: "Genetics Fitness Social App",
+  description: "AthleteDNA - Genetics Fitness Social App",
+};
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-	return (
-		<html lang="en">
-			<body className="bg-slate-50 min-h-screen">{children}</body>
-		</html>
-	)
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
 
