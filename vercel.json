@@ -1,13 +1,6 @@
 {
 	"version": 2,
-	"framework": "vite",
+	"framework": "nextjs",
 	"buildCommand": "npm run build",
-	"outputDirectory": "build",
-	"routes": [
-		{ "handle": "filesystem" },
-		{
-			"src": "/.*",
-			"dest": "/index.html"
-		}
-	]
+	"outputDirectory": ".next"
 }

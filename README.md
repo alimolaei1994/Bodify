@@ -4,11 +4,10 @@ This is a code bundle for Genetics Fitness Social App UI. The original project i
 
 ## Running the code
 
-Run `npm i` to install the dependencies.
-
-Run `npm run dev` to start the development server.
+1. Run `npm install` to install the dependencies.
+2. Run `npm run dev` to start the Next.js development server (http://localhost:3000 by default).
 
 ## Deployment
 
-- **Vercel**: the `vercel.json` file configures Vercel to run `npm run build`, deploy the contents of the `build` directory, and fall back to `index.html` for SPA-style routing.
-- **Netlify**: the `netlify.toml` file mirrors the same build settings, and `public/_redirects` ensures that client-side routing works when directly accessing deep links.
+- **Vercel**: `vercel.json` now targets the built-in Next.js runtime (`npm run build` + `.next` output).
+- **Netlify**: `netlify.toml` runs the same build and loads `@netlify/plugin-nextjs` so SSR features work out of the box.
