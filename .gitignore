@@ -13,7 +13,6 @@ node_modules/
 dist/
 build/
 out/
-.next/
 
 # Local .env files
 .env
@@ -30,6 +29,5 @@ out/
 .DS_Store
 Thumbs.db
 
-# Next.js specific
-.next/
-out/
+# Vite specific
+.vite/
