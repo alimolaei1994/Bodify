@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.4.1
+- Added mobile-first design rule to `.cursorrules`
+- Made all pages responsive for mobile devices
+- Added mobile menu drawer to Sidebar component
+- Optimized spacing and padding for mobile screens
+- Updated landing page, login page, and dashboard layout for mobile responsiveness
+
 ## 0.4.0
 - Added landing page with white background design
 - Created login page with Google SSO integration
