@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.4.3
+- Fixed npm i rule to run after version update instead of before commit
+
 ## 0.4.2
 - Added `npm i` rule to `.cursorrules` workflow
 - Updated workflow to include dependency installation before build
