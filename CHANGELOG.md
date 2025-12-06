@@ -2,22 +2,22 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.3.0
-- ترجمه تمام متن‌های کامپوننت‌ها به فارسی
-- فارسی‌سازی Genetics component
-- فارسی‌سازی Plans component
-- فارسی‌سازی Groups component
-- فارسی‌سازی Profile component
+- Translate all component texts to Persian
+- Persian translation for Genetics component
+- Persian translation for Plans component
+- Persian translation for Groups component
+- Persian translation for Profile component
 
 ## 0.2.0
-- اضافه کردن فایل `.cursorrules` با قوانین workflow کامل
-- اضافه کردن لوگوی RiseStyle به Sidebar
-- اعمال فونت وزیر و راست‌چین کردن پروژه
-- تغییر نام اپلیکیشن از AthleteDNA به RiseStyle
-- رفع خطاهای TypeScript در `calendar.tsx` و `chart.tsx`
-- رفع خطای `darkMode` در `tailwind.config.ts`
-- رفع خطاهای build
-- به‌روزرسانی قوانین Cursor برای type definitions جداگانه
-- اضافه کردن قانون build قبل از commit
+- Added `.cursorrules` file with comprehensive workflow rules
+- Integrated RiseStyle logo into Sidebar
+- Applied Vazir font and set up RTL layout for the project
+- Renamed the application from "AthleteDNA" to "RiseStyle"
+- Fixed TypeScript errors in `calendar.tsx` and `chart.tsx`
+- Resolved `darkMode` configuration error in `tailwind.config.ts`
+- Fixed build errors
+- Updated Cursor rules to enforce separate type definitions for each component
+- Added a rule to run and fix build errors before committing
 
 ## 0.1.0
 - Migrated the project to Next.js App Router with `app/` structure and added pages `/genetics`, `/plans`, `/groups`, `/profile`
