@@ -9,16 +9,16 @@ export function Sidebar() {
 	const pathname = usePathname()
 
 	const menuItems = [
-		{ id: 'dashboard', label: 'خانه', icon: Home, href: '/', free: true },
-		{ id: 'genetics', label: 'ژنتیک', icon: Dna, href: '/genetics', premium: true },
-		{ id: 'plans', label: 'برنامه‌های من', icon: ClipboardList, href: '/plans', premium: true },
-		{ id: 'groups', label: 'گروه‌ها', icon: Users, href: '/groups', premium: true },
-		{ id: 'profile', label: 'پروفایل', icon: User, href: '/profile', free: true }
+		{ id: 'dashboard', label: 'خانه', icon: Home, href: '/dashboard', free: true },
+		{ id: 'genetics', label: 'ژنتیک', icon: Dna, href: '/dashboard/genetics', premium: true },
+		{ id: 'plans', label: 'برنامه‌های من', icon: ClipboardList, href: '/dashboard/plans', premium: true },
+		{ id: 'groups', label: 'گروه‌ها', icon: Users, href: '/dashboard/groups', premium: true },
+		{ id: 'profile', label: 'پروفایل', icon: User, href: '/dashboard/profile', free: true }
 	]
 
 	const isActive = (href: string) => {
-		if (href === '/') {
-			return pathname === '/'
+		if (href === '/dashboard') {
+			return pathname === '/dashboard'
 		}
 		return pathname.startsWith(href)
 	}
@@ -26,7 +26,7 @@ export function Sidebar() {
 	return (
 		<div className="w-64 bg-slate-900 text-white h-screen fixed right-0 top-0 flex flex-col">
 			<div className="p-6 border-b border-slate-800">
-				<Link href="/" className="flex items-center gap-2">
+				<Link href="/dashboard" className="flex items-center gap-2">
 					<Image src="/icon.png" alt="RiseStyle" width={32} height={32} className="object-contain" />
 					<span className="text-lg font-semibold">RiseStyle</span>
 				</Link>
