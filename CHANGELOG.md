@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.4.0
+- Added landing page with white background design
+- Created login page with Google SSO integration
+- Restructured dashboard pages under `/dashboard` route
+- Moved all dashboard pages (genetics, plans, groups, profile) to `/dashboard/*` routes
+- Updated layout to show Sidebar only in dashboard pages
+- Updated Sidebar navigation links to point to new dashboard routes
+
 ## 0.3.0
 - Translate all component texts to Persian
 - Persian translation for Genetics component
