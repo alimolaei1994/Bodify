@@ -21,12 +21,16 @@ Whenever you make changes to the project, you must follow these steps:
 - Use meaningful commit messages that clearly describe the changes
 - Format: `type: description` (e.g., `feat: Add RiseStyle logo`)
 
-### 2. Update Version
+### 2. Update Version & Install Dependencies
 - After each commit, update the version in `package.json`
 - Use Semantic Versioning:
   - **MAJOR** (x.0.0): Breaking changes
   - **MINOR** (0.x.0): New features
   - **PATCH** (0.0.x): Bug fixes and small changes
+- **After updating version**, run `npm i` to update `package-lock.json`:
+  ```bash
+  npm i
+  ```
 
 ### 3. Update CHANGELOG.md
 - Always update CHANGELOG.md after committing
@@ -89,7 +93,7 @@ Whenever you make changes to the project, you must follow these steps:
 
 ## Important Notes
 
-- **Always** before commit: Build → Fix Errors → Commit → Update Version → Update CHANGELOG
+- **Always** before commit: Build → Fix Errors → Commit → Update Version → npm i → Update CHANGELOG
 - Never commit with build or lint errors
 - Never leave changes without committing
 - Before pushing, make sure everything is committed

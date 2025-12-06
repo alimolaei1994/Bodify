@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.4.2
+- Added `npm i` rule to `.cursorrules` workflow
+- Updated workflow to include dependency installation before build
+
 ## 0.4.1
 - Added mobile-first design rule to `.cursorrules`
 - Made all pages responsive for mobile devices
