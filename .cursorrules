@@ -2,71 +2,65 @@
 
 ## Git Workflow
 
-هر زمان که تغییری در پروژه ایجاد می‌کنی، باید این مراحل را دنبال کنی:
+Whenever you make changes to the project, you must follow these steps:
 
-### 0. Build & Lint (قبل از Commit)
-- **همیشه** قبل از commit، build بگیر و خطاها را رفع کن:
+### 0. Build & Lint (Before Commit)
+- **Always** build before committing and fix any errors:
   ```bash
   npm run build
   ```
-- اگر خطای build وجود داشت، **حتماً** آن را رفع کن قبل از commit
-- خطاهای lint را هم بررسی و رفع کن:
+- If there are build errors, **must** fix them before committing
+- Also check and fix lint errors:
   ```bash
   npm run lint
   ```
-- **هرگز** با خطای build یا lint commit نکن
+- **Never** commit with build or lint errors
 
 ### 1. Commit Changes
-- همیشه قبل از commit، تمام فایل‌های تغییر یافته را add کن
-- از پیام commit معنادار استفاده کن که تغییرات را به وضوح توضیح دهد
-- فرمت: `type: description` (مثلاً: `feat: اضافه کردن لوگوی RiseStyle`)
+- Always add all changed files before committing
+- Use meaningful commit messages that clearly describe the changes
+- Format: `type: description` (e.g., `feat: Add RiseStyle logo`)
 
 ### 2. Update Version
-- بعد از هر commit، ورژن را در `package.json` به‌روز کن
-- از Semantic Versioning استفاده کن:
-  - **MAJOR** (x.0.0): تغییرات breaking
-  - **MINOR** (0.x.0): ویژگی‌های جدید
-  - **PATCH** (0.0.x): باگ فیکس‌ها و تغییرات کوچک
+- After each commit, update the version in `package.json`
+- Use Semantic Versioning:
+  - **MAJOR** (x.0.0): Breaking changes
+  - **MINOR** (0.x.0): New features
+  - **PATCH** (0.0.x): Bug fixes and small changes
 
 ### 3. Update CHANGELOG.md
-- همیشه بعد از commit، CHANGELOG.md را به‌روز کن
-- تغییرات را در بخش `[Unreleased]` یا ورژن جدید اضافه کن
-- از فرمت زیر استفاده کن:
+- Always update CHANGELOG.md after committing
+- Add changes to the `[Unreleased]` section or new version
+- Use the following format:
   ```markdown
-  ## [Version] - YYYY-MM-DD
-  
-  ### Added
-  - توضیح تغییرات جدید
-  
-  ### Changed
-  - توضیح تغییرات موجود
-  
-  ### Fixed
-  - توضیح باگ فیکس‌ها
+  ## [Version]
+  - Description of new changes
+  - Description of existing changes
+  - Description of bug fixes
   ```
 
 ## Project Conventions
 
-- همه import ها باید از `@/` استفاده کنند (نه relative paths)
-- همه متن‌ها باید فارسی باشند
-- فونت استفاده شده: Vazir
-- جهت صفحه: RTL
-- نام اپلیکیشن: RiseStyle
+- All imports must use `@/` (not relative paths)
+- All text content must be in Persian
+- Font used: Vazir
+- Page direction: RTL
+- App name: RiseStyle
 
 ## Code Style
 
-- از Prettier برای فرمت کردن کد استفاده کن
-- از TypeScript برای type safety استفاده کن
-- کامپوننت‌ها باید در `components/` قرار بگیرند
-- صفحات باید در `app/` قرار بگیرند (Next.js App Router)
+- Use Prettier for code formatting
+- Use TypeScript for type safety
+- Components must be in `components/`
+- Pages must be in `app/` (Next.js App Router)
 
 ## Type Definitions
 
-- **همیشه** type های کامپوننت‌ها را در پوشه `types/` قرار بده و جدا نگه دار
-- **برای هر کامپوننت، یک فایل type جداگانه** در `types/` بساز
-- از نام‌گذاری `ComponentName.types.ts` استفاده کن
-- **هر کامپوننت باید فایل type مخصوص به خودش را داشته باشد** (نه یک فایل مشترک)
-- type ها را export کن و در کامپوننت import کن:
+- **Always** place component types in the `types/` folder and keep them separate
+- **For each component, create a separate type file** in `types/`
+- Use naming convention `ComponentName.types.ts`
+- **Each component must have its own type file** (not a shared file)
+- Export types and import them in components:
   ```typescript
   // types/Dashboard.types.ts
   export interface DashboardProps {
@@ -84,12 +78,12 @@
   // components/Sidebar.tsx
   import type { SidebarProps } from '@/types/Sidebar.types'
   ```
-- **هرگز** type ها را inline در کامپوننت ننویس، همیشه جدا کن
-- **هرگز** type های چند کامپوننت را در یک فایل ننویس، هر کامپوننت فایل type خودش را داشته باشد
+- **Never** write types inline in components, always separate them
+- **Never** write types for multiple components in one file, each component should have its own type file
 
 ## Important Notes
 
-- **همیشه** قبل از commit: Build → Fix Errors → Commit → Update Version → Update CHANGELOG
-- هرگز با خطای build یا lint commit نکن
-- هرگز بدون commit کردن تغییرات را رها نکن
-- قبل از push کردن، مطمئن شو که همه چیز commit شده است
+- **Always** before commit: Build → Fix Errors → Commit → Update Version → Update CHANGELOG
+- Never commit with build or lint errors
+- Never leave changes without committing
+- Before pushing, make sure everything is committed

@@ -8,19 +8,19 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Dumbbell, Apple, Calendar, Clock, Target, User, CheckCircle, Crown, Lock, Download, MessageCircle } from 'lucide-react'
 
 const workoutPlan = {
-	name: 'Cardio Performance Protocol',
-	duration: '12 weeks',
+	name: 'پروتکل عملکرد قلبی',
+	duration: '۱۲ هفته',
 	expert: {
-		name: 'Dr. Sarah Mitchell',
-		title: 'Sports Geneticist & Trainer',
+		name: 'دکتر سارا میچل',
+		title: 'ژنتیک‌دان ورزشی و مربی',
 		avatar: 'SM'
 	},
-	basedOn: ['ACE II Genotype', 'High VO2 Max Potential', 'TRIMP Targets', 'Smartwatch Data'],
+	basedOn: ['ژنوتیپ ACE II', 'پتانسیل بالای VO2 Max', 'اهداف TRIMP', 'داده‌های ساعت هوشمند'],
 	weeklySchedule: [
 		{
-			day: 'Monday',
-			focus: 'VO2 Max Intervals',
-			duration: '60 min',
+			day: 'دوشنبه',
+			focus: 'اینتروال VO2 Max',
+			duration: '۶۰ دقیقه',
 			targetTrimp: 95,
 			targetVO2: 49,
 			exercises: [
@@ -39,9 +39,9 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Tuesday',
-			focus: 'Steady State Cardio',
-			duration: '75 min',
+			day: 'سه‌شنبه',
+			focus: 'قلبی حالت پایدار',
+			duration: '۷۵ دقیقه',
 			targetTrimp: 105,
 			targetVO2: 48,
 			exercises: [
@@ -50,9 +50,9 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Wednesday',
-			focus: 'Threshold Training',
-			duration: '50 min',
+			day: 'چهارشنبه',
+			focus: 'تمرین آستانه',
+			duration: '۵۰ دقیقه',
 			targetTrimp: 88,
 			targetVO2: 50,
 			exercises: [
@@ -71,9 +71,9 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Thursday',
-			focus: 'Active Recovery',
-			duration: '30 min',
+			day: 'پنج‌شنبه',
+			focus: 'بازیابی فعال',
+			duration: '۳۰ دقیقه',
 			targetTrimp: 35,
 			targetVO2: 45,
 			exercises: [
@@ -86,9 +86,9 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Friday',
-			focus: 'Mixed Cardio',
-			duration: '65 min',
+			day: 'جمعه',
+			focus: 'قلبی ترکیبی',
+			duration: '۶۵ دقیقه',
 			targetTrimp: 110,
 			targetVO2: 51,
 			exercises: [
@@ -98,9 +98,9 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Saturday',
-			focus: 'Long Endurance',
-			duration: '90 min',
+			day: 'شنبه',
+			focus: 'استقامت طولانی',
+			duration: '۹۰ دقیقه',
 			targetTrimp: 128,
 			targetVO2: 49,
 			exercises: [
@@ -110,8 +110,8 @@ const workoutPlan = {
 			]
 		},
 		{
-			day: 'Sunday',
-			focus: 'Rest & Recovery',
+			day: 'یکشنبه',
+			focus: 'استراحت و بازیابی',
 			duration: '-',
 			targetTrimp: 0,
 			targetVO2: 0,
@@ -121,13 +121,13 @@ const workoutPlan = {
 }
 
 const nutritionPlan = {
-	name: 'Performance Fuel Protocol',
+	name: 'پروتکل سوخت عملکرد',
 	expert: {
-		name: 'Dr. Michael Chen',
-		title: 'Sports Nutritionist',
+		name: 'دکتر مایکل چن',
+		title: 'متخصص تغذیه ورزشی',
 		avatar: 'MC'
 	},
-	basedOn: ['Metabolism Genes', 'Protein Requirements', 'Carb Sensitivity', 'Calorie Burn Data'],
+	basedOn: ['ژن‌های متابولیسم', 'نیازهای پروتئین', 'حساسیت کربوهیدرات', 'داده‌های سوزاندن کالری'],
 	dailyTargets: {
 		calories: 2800,
 		protein: 180,
@@ -190,19 +190,19 @@ export function Plans() {
 			<div className="flex items-center justify-between">
 				<div>
 					<div className="flex items-center gap-2 mb-2">
-						<Badge className="bg-purple-600 text-white">Premium Feature</Badge>
+						<Badge className="bg-purple-600 text-white">ویژگی پریمیوم</Badge>
 					</div>
-					<h1>Your Personalized Plans</h1>
-					<p className="text-slate-600">Custom workout and nutrition plans based on your genetics and smartwatch data</p>
+					<h1>برنامه‌های شخصی شما</h1>
+					<p className="text-slate-600">برنامه‌های تمرینی و تغذیه سفارشی بر اساس ژنتیک و داده‌های ساعت هوشمند شما</p>
 				</div>
 				<div className="flex gap-2">
 					<Button variant="outline">
 						<MessageCircle className="w-4 h-4 mr-2" />
-						Contact Expert
+						تماس با متخصص
 					</Button>
 					<Button variant="outline">
 						<Download className="w-4 h-4 mr-2" />
-						Download PDF
+						دانلود PDF
 					</Button>
 				</div>
 			</div>
@@ -218,7 +218,7 @@ export function Plans() {
 							<h4 className="text-slate-900">{workoutPlan.expert.name}</h4>
 							<p className="text-slate-600 text-sm">{workoutPlan.expert.title}</p>
 							<Badge variant="secondary" className="mt-2">
-								Workout Plan Creator
+								سازنده برنامه تمرینی
 							</Badge>
 						</div>
 						<Button size="sm" variant="outline">
@@ -236,7 +236,7 @@ export function Plans() {
 							<h4 className="text-slate-900">{nutritionPlan.expert.name}</h4>
 							<p className="text-slate-600 text-sm">{nutritionPlan.expert.title}</p>
 							<Badge variant="secondary" className="mt-2">
-								Nutrition Plan Creator
+								سازنده برنامه تغذیه
 							</Badge>
 						</div>
 						<Button size="sm" variant="outline">
@@ -250,11 +250,11 @@ export function Plans() {
 				<TabsList>
 					<TabsTrigger value="workout">
 						<Dumbbell className="w-4 h-4 mr-2" />
-						Workout Plan
+						برنامه تمرینی
 					</TabsTrigger>
 					<TabsTrigger value="nutrition">
 						<Apple className="w-4 h-4 mr-2" />
-						Nutrition Plan
+						برنامه تغذیه
 					</TabsTrigger>
 				</TabsList>
 
@@ -263,7 +263,7 @@ export function Plans() {
 						<div className="flex items-start justify-between mb-6">
 							<div>
 								<h3 className="mb-2">{workoutPlan.name}</h3>
-								<p className="text-slate-600 text-sm mb-4">A 12-week program designed specifically for your genetic profile</p>
+								<p className="text-slate-600 text-sm mb-4">یک برنامه ۱۲ هفته‌ای که به طور خاص برای پروفایل ژنتیک شما طراحی شده است</p>
 								<div className="flex flex-wrap gap-2">
 									<Badge variant="secondary">
 										<Calendar className="w-3 h-3 mr-1" />
@@ -279,16 +279,14 @@ export function Plans() {
 						</div>
 
 						<div className="p-4 bg-emerald-50 rounded-lg border border-emerald-200 mb-6">
-							<h4 className="text-emerald-900 mb-2">Why This Plan?</h4>
+							<h4 className="text-emerald-900 mb-2">چرا این برنامه؟</h4>
 							<p className="text-emerald-700 text-sm">
-								Based on your ACE II genotype (exceptional endurance capacity) and high VO2 max potential, this program focuses on cardiovascular training with
-								progressive TRIMP targets to maximize your aerobic performance. Your smartwatch data shows excellent recovery metrics, allowing for higher training
-								volume.
+								بر اساس ژنوتیپ ACE II شما (ظرفیت استقامتی استثنایی) و پتانسیل بالای VO2 max، این برنامه بر تمرینات قلبی-عروقی با اهداف TRIMP پیشرونده برای به حداکثر رساندن عملکرد هوازی شما تمرکز دارد. داده‌های ساعت هوشمند شما معیارهای بازیابی عالی را نشان می‌دهد که امکان حجم تمرین بالاتر را فراهم می‌کند.
 							</p>
 						</div>
 
 						{/* Weekly Schedule */}
-						<h4 className="text-slate-900 mb-4">Weekly Schedule</h4>
+						<h4 className="text-slate-900 mb-4">برنامه هفتگی</h4>
 						<div className="space-y-3">
 							{workoutPlan.weeklySchedule.map((day, index) => (
 								<Card key={index} className="p-5 hover:shadow-md transition-shadow">
@@ -307,10 +305,10 @@ export function Plans() {
 											{day.targetTrimp > 0 && (
 												<div className="flex items-center gap-4 text-sm">
 													<Badge variant="outline" className="bg-purple-50">
-														Target TRIMP: {day.targetTrimp}
+														هدف TRIMP: {day.targetTrimp}
 													</Badge>
 													<Badge variant="outline" className="bg-teal-50">
-														Target VO2 Max: {day.targetVO2} ml/kg/min
+														هدف VO2 Max: {day.targetVO2} میلی‌لیتر/کیلوگرم/دقیقه
 													</Badge>
 												</div>
 											)}
@@ -332,19 +330,19 @@ export function Plans() {
 											))}
 										</div>
 									) : (
-										<p className="text-slate-600 text-sm">Full rest and recovery day</p>
+										<p className="text-slate-600 text-sm">روز استراحت و بازیابی کامل</p>
 									)}
 								</Card>
 							))}
 						</div>
 
 						<div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-							<h4 className="text-blue-900 mb-2">Important Notes</h4>
+							<h4 className="text-blue-900 mb-2">نکات مهم</h4>
 							<ul className="space-y-2 text-blue-700 text-sm">
-								<li>• Monitor your heart rate to stay within target zones for optimal TRIMP accumulation</li>
-								<li>• Your smartwatch will automatically track TRIMP and VO2 max during workouts</li>
-								<li>• Adjust intensity based on daily readiness and recovery metrics</li>
-								<li>• Contact your trainer if you experience unusual fatigue or elevated resting heart rate</li>
+								<li>• ضربان قلب خود را برای ماندن در محدوده هدف برای تجمع بهینه TRIMP نظارت کنید</li>
+								<li>• ساعت هوشمند شما به طور خودکار TRIMP و VO2 max را در طول تمرینات ردیابی می‌کند</li>
+								<li>• شدت را بر اساس آمادگی روزانه و معیارهای بازیابی تنظیم کنید</li>
+								<li>• در صورت تجربه خستگی غیرعادی یا افزایش ضربان قلب در حالت استراحت با مربی خود تماس بگیرید</li>
 							</ul>
 						</div>
 					</Card>
@@ -355,7 +353,7 @@ export function Plans() {
 						<div className="flex items-start justify-between mb-6">
 							<div>
 								<h3 className="mb-2">{nutritionPlan.name}</h3>
-								<p className="text-slate-600 text-sm mb-4">Optimized nutrition based on your metabolism and training intensity</p>
+								<p className="text-slate-600 text-sm mb-4">تغذیه بهینه بر اساس متابولیسم و شدت تمرین شما</p>
 								<div className="flex flex-wrap gap-2">
 									{nutritionPlan.basedOn.map((factor, index) => (
 										<Badge key={index} variant="outline">
@@ -369,41 +367,39 @@ export function Plans() {
 						{/* Daily Targets */}
 						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
 							<div className="p-4 bg-slate-50 rounded-lg text-center">
-								<p className="text-slate-600 text-sm mb-1">Daily Calories</p>
+								<p className="text-slate-600 text-sm mb-1">کالری روزانه</p>
 								<p className="text-slate-900 text-2xl">{nutritionPlan.dailyTargets.calories}</p>
 							</div>
 							<div className="p-4 bg-red-50 rounded-lg text-center">
-								<p className="text-red-600 text-sm mb-1">Protein</p>
+								<p className="text-red-600 text-sm mb-1">پروتئین</p>
 								<p className="text-red-900 text-2xl">{nutritionPlan.dailyTargets.protein}g</p>
 							</div>
 							<div className="p-4 bg-blue-50 rounded-lg text-center">
-								<p className="text-blue-600 text-sm mb-1">Carbs</p>
+								<p className="text-blue-600 text-sm mb-1">کربوهیدرات</p>
 								<p className="text-blue-900 text-2xl">{nutritionPlan.dailyTargets.carbs}g</p>
 							</div>
 							<div className="p-4 bg-amber-50 rounded-lg text-center">
-								<p className="text-amber-600 text-sm mb-1">Fats</p>
+								<p className="text-amber-600 text-sm mb-1">چربی</p>
 								<p className="text-amber-900 text-2xl">{nutritionPlan.dailyTargets.fats}g</p>
 							</div>
 						</div>
 
 						<div className="p-4 bg-blue-50 rounded-lg border border-blue-200 mb-6">
-							<h4 className="text-blue-900 mb-2">Personalization Notes</h4>
+							<h4 className="text-blue-900 mb-2">یادداشت‌های شخصی‌سازی</h4>
 							<p className="text-blue-700 text-sm">
-								Your genetic profile shows efficient carbohydrate metabolism, allowing for higher carb intake around training. Your protein needs are elevated due
-								to your ACTN3 variant and current muscle-building phase. Based on your smartwatch data showing 4,320 kcal burned weekly, your calorie target
-								supports both performance and recovery.
+								پروفایل ژنتیک شما متابولیسم کارآمد کربوهیدرات را نشان می‌دهد که امکان مصرف کربوهیدرات بیشتر در اطراف تمرین را فراهم می‌کند. نیازهای پروتئین شما به دلیل واریانت ACTN3 و فاز فعلی عضله‌سازی افزایش یافته است. بر اساس داده‌های ساعت هوشمند شما که ۴,۳۲۰ کالری سوزانده شده هفتگی را نشان می‌دهد، هدف کالری شما هم عملکرد و هم بازیابی را پشتیبانی می‌کند.
 							</p>
 						</div>
 
 						{/* Meal Plan */}
-						<h4 className="text-slate-900 mb-4">Daily Meal Plan</h4>
+						<h4 className="text-slate-900 mb-4">برنامه وعده‌های غذایی روزانه</h4>
 						<div className="space-y-3">
 							{nutritionPlan.meals.map((meal, index) => (
 								<Card key={index} className="p-5">
 									<div className="flex items-start justify-between mb-3">
 										<div>
 											<h4 className="text-slate-900 mb-1">{meal.meal}</h4>
-											<p className="text-slate-600 text-sm">{meal.calories} calories</p>
+											<p className="text-slate-600 text-sm">{meal.calories} کالری</p>
 										</div>
 										<div className="flex gap-2 text-xs">
 											<Badge variant="outline" className="bg-red-50">
@@ -431,12 +427,12 @@ export function Plans() {
 
 						{/* Supplements */}
 						<Card className="p-5 mt-6 bg-purple-50 border-purple-200">
-							<h4 className="text-purple-900 mb-4">Recommended Supplements</h4>
+							<h4 className="text-purple-900 mb-4">مکمل‌های توصیه شده</h4>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 								{nutritionPlan.supplements.map((supp, index) => (
 									<div key={index} className="p-4 bg-white rounded-lg border border-purple-200">
 										<h4 className="text-slate-900 mb-1">{supp.name}</h4>
-										<p className="text-slate-600 text-sm">Dosage: {supp.dosage}</p>
+										<p className="text-slate-600 text-sm">دوز: {supp.dosage}</p>
 										<p className="text-purple-600 text-xs mt-1">{supp.timing}</p>
 									</div>
 								))}
@@ -444,12 +440,12 @@ export function Plans() {
 						</Card>
 
 						<div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-							<h4 className="text-amber-900 mb-2">Important Reminders</h4>
+							<h4 className="text-amber-900 mb-2">یادآوری‌های مهم</h4>
 							<ul className="space-y-2 text-amber-700 text-sm">
-								<li>• Adjust portions based on hunger and energy levels</li>
-								<li>• Stay hydrated - aim for 3-4 liters of water daily</li>
-								<li>• Time your carbs around workouts for optimal performance</li>
-								<li>• Track your meals in the app for best results</li>
+								<li>• مقدار غذا را بر اساس گرسنگی و سطح انرژی تنظیم کنید</li>
+								<li>• هیدراته بمانید - هدف ۳-۴ لیتر آب روزانه</li>
+								<li>• زمان مصرف کربوهیدرات را در اطراف تمرینات برای عملکرد بهینه تنظیم کنید</li>
+								<li>• وعده‌های غذایی خود را در اپلیکیشن ردیابی کنید برای بهترین نتایج</li>
 							</ul>
 						</div>
 					</Card>

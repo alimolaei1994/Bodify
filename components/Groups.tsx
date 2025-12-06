@@ -12,47 +12,47 @@ import { ImageWithFallback } from '@/components/figma/ImageWithFallback'
 const myGroups = [
 	{
 		id: 1,
-		name: 'VO2 Max Elite',
-		description: 'Athletes with high VO2 max genetics and aerobic capacity',
+		name: 'نخبه VO2 Max',
+		description: 'ورزشکاران با ژنتیک VO2 max بالا و ظرفیت هوازی',
 		members: 24,
 		geneticMatch: 92,
-		category: 'Aerobic Performance',
+		category: 'عملکرد هوازی',
 		color: 'teal',
-		activeChallenge: 'VO2 Max Challenge',
+		activeChallenge: 'چالش VO2 Max',
 		yourRank: 3,
-		nextSession: 'Tomorrow, 6:00 PM'
+		nextSession: 'فردا، ۶:۰۰ بعدازظهر'
 	},
 	{
 		id: 2,
-		name: 'Endurance Warriors',
-		description: 'ACE II genotype carriers focused on cardiovascular performance',
+		name: 'جنگجویان استقامت',
+		description: 'دارندگان ژنوتیپ ACE II متمرکز بر عملکرد قلبی-عروقی',
 		members: 31,
 		geneticMatch: 88,
-		category: 'Endurance',
+		category: 'استقامت',
 		color: 'blue',
-		activeChallenge: 'TRIMP Master Challenge',
+		activeChallenge: 'چالش استاد TRIMP',
 		yourRank: 2,
-		nextSession: 'Friday, 7:00 AM'
+		nextSession: 'جمعه، ۷:۰۰ صبح'
 	}
 ]
 
 const suggestedGroups = [
 	{
 		id: 3,
-		name: 'Fast Recovery Squad',
-		description: 'Athletes with optimal recovery genes and similar training schedules',
+		name: 'گروه بازیابی سریع',
+		description: 'ورزشکاران با ژن‌های بازیابی بهینه و برنامه‌های تمرینی مشابه',
 		members: 18,
 		geneticMatch: 85,
-		category: 'Recovery',
+		category: 'بازیابی',
 		color: 'green'
 	},
 	{
 		id: 4,
-		name: 'Hybrid Athletes',
-		description: 'Balanced power and endurance genetics for mixed training',
+		name: 'ورزشکاران ترکیبی',
+		description: 'ژنتیک متعادل قدرت و استقامت برای تمرینات ترکیبی',
 		members: 27,
 		geneticMatch: 79,
-		category: 'Hybrid Training',
+		category: 'تمرین ترکیبی',
 		color: 'purple'
 	}
 ]
@@ -75,7 +75,7 @@ const groupMembers = [
 		status: 'online'
 	},
 	{
-		name: 'You (John Doe)',
+		name: 'شما (جان دو)',
 		avatar: 'JD',
 		rank: 3,
 		points: 2650,
@@ -137,21 +137,21 @@ const groupPosts = [
 ]
 
 const groupChallenge = {
-	title: 'TRIMP Master Challenge',
-	description: 'Highest cumulative TRIMP score this week',
-	prize: '1000 points + Group Trophy',
-	endsIn: '3 days',
+	title: 'چالش استاد TRIMP',
+	description: 'بالاترین امتیاز تجمعی TRIMP این هفته',
+	prize: '۱۰۰۰ امتیاز + تروفی گروه',
+	endsIn: '۳ روز',
 	participants: 24,
 	leaderboard: [
 		{
-			name: 'Sarah Martinez',
+			name: 'سارا مارتینز',
 			avatar: 'SM',
 			progress: 685,
 			rank: 1,
 			unit: 'TRIMP'
 		},
 		{
-			name: 'You',
+			name: 'شما',
 			avatar: 'JD',
 			progress: 671,
 			rank: 2,
@@ -165,9 +165,9 @@ const groupChallenge = {
 			rank: 3,
 			unit: 'TRIMP'
 		},
-		{ name: 'Emily Chen', avatar: 'EC', progress: 645, rank: 4, unit: 'TRIMP' },
+		{ name: 'امیلی چن', avatar: 'EC', progress: 645, rank: 4, unit: 'TRIMP' },
 		{
-			name: 'David Thompson',
+			name: 'دیوید تامپسون',
 			avatar: 'DT',
 			progress: 612,
 			rank: 5,
@@ -182,14 +182,14 @@ export function Groups() {
 			<div className="flex items-center justify-between">
 				<div>
 					<div className="flex items-center gap-2 mb-2">
-						<Badge className="bg-purple-600 text-white">Premium Feature</Badge>
+						<Badge className="bg-purple-600 text-white">ویژگی پریمیوم</Badge>
 					</div>
-					<h1>My Groups</h1>
-					<p className="text-slate-600">Train with athletes who share your genetic traits</p>
+					<h1>گروه‌های من</h1>
+					<p className="text-slate-600">با ورزشکارانی که ویژگی‌های ژنتیکی مشابه شما دارند تمرین کنید</p>
 				</div>
 				<Button className="bg-emerald-600 hover:bg-emerald-700">
 					<Plus className="w-4 h-4 mr-2" />
-					Find More Groups
+					پیدا کردن گروه‌های بیشتر
 				</Button>
 			</div>
 
@@ -214,12 +214,12 @@ export function Groups() {
 
 						<div className="grid grid-cols-2 gap-4 mb-4">
 							<div className="p-3 bg-slate-50 rounded-lg">
-								<p className="text-slate-600 text-sm mb-1">Members</p>
+								<p className="text-slate-600 text-sm mb-1">اعضا</p>
 								<p className="text-slate-900">{group.members}</p>
 							</div>
 							<div className="p-3 bg-emerald-50 rounded-lg">
-								<p className="text-emerald-600 text-sm mb-1">Genetic Match</p>
-								<p className="text-emerald-900">{group.geneticMatch}%</p>
+								<p className="text-emerald-600 text-sm mb-1">هماهنگی ژنتیک</p>
+								<p className="text-emerald-900">{group.geneticMatch}٪</p>
 							</div>
 						</div>
 
@@ -229,25 +229,25 @@ export function Groups() {
 								<h4 className="text-purple-900">{group.activeChallenge}</h4>
 							</div>
 							<div className="flex items-center justify-between text-sm">
-								<span className="text-purple-700">Your rank: #{group.yourRank}</span>
-								<Badge variant="secondary">Active</Badge>
+								<span className="text-purple-700">رتبه شما: #{group.yourRank}</span>
+								<Badge variant="secondary">فعال</Badge>
 							</div>
 						</div>
 
 						<div className="flex items-center gap-2 text-slate-600 text-sm mb-4">
 							<Calendar className="w-4 h-4" />
-							<span>Next group workout: {group.nextSession}</span>
+							<span>تمرین گروهی بعدی: {group.nextSession}</span>
 						</div>
 
-						<Button className="w-full bg-emerald-600 hover:bg-emerald-700">View Group</Button>
+						<Button className="w-full bg-emerald-600 hover:bg-emerald-700">مشاهده گروه</Button>
 					</Card>
 				))}
 			</div>
 
 			{/* Suggested Groups */}
 			<Card className="p-6">
-				<h3 className="mb-4">Suggested Groups for You</h3>
-				<p className="text-slate-600 text-sm mb-4">Based on your genetic profile and training preferences</p>
+				<h3 className="mb-4">گروه‌های پیشنهادی برای شما</h3>
+				<p className="text-slate-600 text-sm mb-4">بر اساس پروفایل ژنتیک و ترجیحات تمرینی شما</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{suggestedGroups.map(group => (
 						<div key={group.id} className="p-5 border-2 border-slate-200 rounded-lg hover:border-emerald-500 transition-colors">
@@ -264,14 +264,14 @@ export function Groups() {
 							</div>
 							<p className="text-slate-600 text-sm mb-4">{group.description}</p>
 							<div className="flex items-center justify-between mb-4">
-								<span className="text-slate-600 text-sm">{group.members} members</span>
+								<span className="text-slate-600 text-sm">{group.members} عضو</span>
 								<div className="flex items-center gap-1">
 									<Dna className="w-4 h-4 text-emerald-600" />
-									<span className="text-emerald-900 text-sm">{group.geneticMatch}% match</span>
+									<span className="text-emerald-900 text-sm">{group.geneticMatch}٪ هماهنگی</span>
 								</div>
 							</div>
 							<Button variant="outline" className="w-full">
-								Join Group
+								پیوستن به گروه
 							</Button>
 						</div>
 					))}
@@ -283,9 +283,9 @@ export function Groups() {
 				<Card className="lg:col-span-2 p-6">
 					<Tabs defaultValue="feed" className="w-full">
 						<TabsList>
-							<TabsTrigger value="feed">Group Feed</TabsTrigger>
-							<TabsTrigger value="challenge">Active Challenge</TabsTrigger>
-							<TabsTrigger value="schedule">Schedule</TabsTrigger>
+							<TabsTrigger value="feed">فید گروه</TabsTrigger>
+							<TabsTrigger value="challenge">چالش فعال</TabsTrigger>
+							<TabsTrigger value="schedule">برنامه</TabsTrigger>
 						</TabsList>
 
 						<TabsContent value="feed" className="space-y-4 mt-4">
@@ -324,20 +324,20 @@ export function Groups() {
 
 								<div className="grid grid-cols-3 gap-4 mb-6">
 									<div className="p-3 bg-white rounded-lg text-center">
-										<p className="text-amber-600 text-sm mb-1">Prize</p>
+										<p className="text-amber-600 text-sm mb-1">جایزه</p>
 										<p className="text-amber-900">{groupChallenge.prize.split('+')[0]}</p>
 									</div>
 									<div className="p-3 bg-white rounded-lg text-center">
-										<p className="text-amber-600 text-sm mb-1">Ends In</p>
+										<p className="text-amber-600 text-sm mb-1">پایان در</p>
 										<p className="text-amber-900">{groupChallenge.endsIn}</p>
 									</div>
 									<div className="p-3 bg-white rounded-lg text-center">
-										<p className="text-amber-600 text-sm mb-1">Participants</p>
+										<p className="text-amber-600 text-sm mb-1">شرکت‌کنندگان</p>
 										<p className="text-amber-900">{groupChallenge.participants}</p>
 									</div>
 								</div>
 
-								<h4 className="text-amber-900 mb-3">Leaderboard</h4>
+								<h4 className="text-amber-900 mb-3">جدول رده‌بندی</h4>
 								<div className="space-y-2">
 									{groupChallenge.leaderboard.map(participant => (
 										<div
@@ -380,27 +380,27 @@ export function Groups() {
 							<div className="space-y-3">
 								{[
 									{
-										day: 'Tomorrow',
-										time: '6:00 PM',
-										type: 'VO2 Max Intervals Session',
+										day: 'فردا',
+										time: '۶:۰۰ بعدازظهر',
+										type: 'جلسه اینتروال VO2 Max',
 										participants: 12
 									},
 									{
-										day: 'Friday',
-										time: '7:00 AM',
-										type: 'Endurance Training',
+										day: 'جمعه',
+										time: '۷:۰۰ صبح',
+										type: 'تمرین استقامت',
 										participants: 8
 									},
 									{
-										day: 'Saturday',
-										time: '10:00 AM',
-										type: 'Long Distance Run',
+										day: 'شنبه',
+										time: '۱۰:۰۰ صبح',
+										type: 'دویدن مسافت طولانی',
 										participants: 15
 									},
 									{
-										day: 'Monday',
-										time: '6:30 PM',
-										type: 'Threshold Training',
+										day: 'دوشنبه',
+										time: '۶:۳۰ بعدازظهر',
+										type: 'تمرین آستانه',
 										participants: 10
 									}
 								].map((session, index) => (
@@ -413,11 +413,11 @@ export function Groups() {
 													<span>•</span>
 													<span>{session.time}</span>
 													<span>•</span>
-													<span>{session.participants} attending</span>
+													<span>{session.participants} شرکت‌کننده</span>
 												</div>
 											</div>
 											<Button size="sm" variant="outline">
-												Join
+												پیوستن
 											</Button>
 										</div>
 									</Card>
@@ -429,8 +429,8 @@ export function Groups() {
 
 				<div className="space-y-4">
 					<Card className="p-6">
-						<h3 className="mb-4">Group Members</h3>
-						<p className="text-slate-600 text-sm mb-4">24 members • {groupMembers.filter(m => m.status === 'online').length} online</p>
+						<h3 className="mb-4">اعضای گروه</h3>
+						<p className="text-slate-600 text-sm mb-4">۲۴ عضو • {groupMembers.filter(m => m.status === 'online').length} آنلاین</p>
 						<div className="space-y-3">
 							{groupMembers.map((member, index) => (
 								<div key={index} className={`flex items-center gap-3 p-3 rounded-lg ${member.isUser ? 'bg-emerald-50' : 'bg-slate-50'}`}>
@@ -443,11 +443,11 @@ export function Groups() {
 									<div className="flex-1">
 										<h4 className={`text-sm ${member.isUser ? 'text-emerald-900' : 'text-slate-900'}`}>{member.name}</h4>
 										<div className="flex items-center gap-2 text-xs text-slate-600">
-											<span>Rank #{member.rank}</span>
+											<span>رتبه #{member.rank}</span>
 											<span>•</span>
 											<span className="flex items-center gap-1">
 												<Flame className="w-3 h-3 text-orange-500" />
-												{member.streak} days
+												{member.streak} روز
 											</span>
 										</div>
 									</div>
