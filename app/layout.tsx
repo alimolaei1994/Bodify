@@ -1,40 +1,25 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { AuthProvider } from '@/contexts/AuthContext';
-import { Toaster } from '@/components/ui/sonner';
-import { Layout } from '@/components/Layout';
-import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from 'next'
+import { Sidebar } from '@/components/Sidebar'
+import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'RiseStyle - برنامه تناسب اندام شما',
-  description: 'برنامه جامع مدیریت تناسب اندام و ارتباط با مربیان',
-};
+	title: 'AthleteDNA - Genetics Fitness Social App',
+	description: 'Genetics Fitness Social App'
+}
 
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="fa" dir="rtl">
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <AuthProvider>
-            <Layout>
-              {children}
-            </Layout>
-            <Toaster position="top-right" />
-          </AuthProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	children
+}: Readonly<{
+	children: React.ReactNode
+}>) {
+	return (
+		<html lang="en">
+			<body>
+				<div className="min-h-screen bg-slate-50">
+					<Sidebar />
+					<div className="ml-64 p-8">{children}</div>
+				</div>
+			</body>
+		</html>
+	)
 }
