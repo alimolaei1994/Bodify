@@ -92,18 +92,18 @@ export function Genetics() {
 	// Free user view - Enrollment flow
 	if (!isPremium) {
 		return (
-			<div className="space-y-6">
+			<div className="space-y-4 md:space-y-6">
 				<div>
 					<div className="flex items-center gap-2 mb-2">
-						<Crown className="w-6 h-6 text-purple-600" />
-						<Badge className="bg-purple-600 text-white">ویژگی پریمیوم</Badge>
+						<Crown className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
+						<Badge className="bg-purple-600 text-white text-xs md:text-sm">ویژگی پریمیوم</Badge>
 					</div>
-					<h1>پتانسیل ژنتیکی خود را آزاد کنید</h1>
-					<p className="text-slate-600">کشف کنید که DNA شما چگونه بر تناسب اندام، تغذیه و عملکرد ورزشی شما تأثیر می‌گذارد</p>
+					<h1 className="text-2xl md:text-3xl">پتانسیل ژنتیکی خود را آزاد کنید</h1>
+					<p className="text-sm md:text-base text-slate-600">کشف کنید که DNA شما چگونه بر تناسب اندام، تغذیه و عملکرد ورزشی شما تأثیر می‌گذارد</p>
 				</div>
 
 				{/* Hero Section */}
-				<Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 relative overflow-hidden">
+				<Card className="p-4 md:p-8 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 relative overflow-hidden">
 					<div className="absolute top-0 right-0 w-96 h-96 opacity-10">
 						<ImageWithFallback
 							src="https://images.unsplash.com/photo-1583912086005-ac9abca6c9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxETkElMjBnZW5ldGljcyUyMHNjaWVuY2V8ZW58MXx8fHwxNzYyOTMxOTM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -137,9 +137,9 @@ export function Genetics() {
 				</Card>
 
 				{/* How It Works */}
-				<Card className="p-6">
-					<h3 className="mb-6">نحوه کار</h3>
-					<div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+				<Card className="p-4 md:p-6">
+					<h3 className="mb-4 md:mb-6 text-xl md:text-2xl">نحوه کار</h3>
+					<div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
 						{enrollmentSteps.map((step, index) => {
 							const Icon = step.icon
 							return (
@@ -160,9 +160,9 @@ export function Genetics() {
 				</Card>
 
 				{/* What You'll Discover */}
-				<Card className="p-6">
-					<h3 className="mb-6">آنچه کشف خواهید کرد</h3>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<Card className="p-4 md:p-6">
+					<h3 className="mb-4 md:mb-6 text-xl md:text-2xl">آنچه کشف خواهید کرد</h3>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 						<div className="space-y-4">
 							<h4 className="text-slate-900">تحلیل ویژگی‌های تناسب اندام</h4>
 							<ul className="space-y-3">
@@ -204,8 +204,8 @@ export function Genetics() {
 				</Card>
 
 				{/* Pricing */}
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<Card className="p-6 border-2 border-slate-200">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+					<Card className="p-4 md:p-6 border-2 border-slate-200">
 						<Badge variant="secondary" className="mb-4">
 							تست یک‌باره
 						</Badge>

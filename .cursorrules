@@ -53,6 +53,12 @@ Whenever you make changes to the project, you must follow these steps:
 - Use TypeScript for type safety
 - Components must be in `components/`
 - Pages must be in `app/` (Next.js App Router)
+- **Always use Mobile-First design approach**
+  - Start with mobile styles (base classes without breakpoints)
+  - Use Tailwind responsive prefixes (`md:`, `lg:`, etc.) to enhance for larger screens
+  - Example: `p-4 md:p-6` (mobile first: padding 4, then padding 6 on medium screens and up)
+  - Never use desktop-first approach (e.g., `p-6 md:p-4` is wrong)
+  - Ensure all components are fully functional and visually appealing on mobile devices
 
 ## Type Definitions
 

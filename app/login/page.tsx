@@ -22,22 +22,22 @@ export default function LoginPage() {
 	}
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-6">
-			<Card className="w-full max-w-md p-8 bg-slate-800 border-slate-700">
-				<div className="text-center mb-8">
-					<Link href="/" className="inline-flex items-center gap-2 mb-6">
-						<Image src="/icon.png" alt="RiseStyle" width={48} height={48} className="object-contain" />
-						<span className="text-3xl font-bold text-white">RiseStyle</span>
+		<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4 md:p-6">
+			<Card className="w-full max-w-md p-6 md:p-8 bg-slate-800 border-slate-700">
+				<div className="text-center mb-6 md:mb-8">
+					<Link href="/" className="inline-flex items-center gap-2 mb-4 md:mb-6">
+						<Image src="/icon.png" alt="RiseStyle" width={40} height={40} className="md:w-12 md:h-12 object-contain" />
+						<span className="text-2xl md:text-3xl font-bold text-white">RiseStyle</span>
 					</Link>
-					<h1 className="text-2xl font-bold text-white mb-2">خوش آمدید</h1>
-					<p className="text-slate-400">برای ادامه وارد حساب کاربری خود شوید</p>
+					<h1 className="text-xl md:text-2xl font-bold text-white mb-2">خوش آمدید</h1>
+					<p className="text-sm md:text-base text-slate-400">برای ادامه وارد حساب کاربری خود شوید</p>
 				</div>
 
 				<div className="space-y-4">
 					<Button
 						onClick={handleGoogleLogin}
 						disabled={isLoading}
-						className="w-full bg-white text-slate-900 hover:bg-slate-100 h-12 text-base"
+						className="w-full bg-white text-slate-900 hover:bg-slate-100 h-11 md:h-12 text-sm md:text-base"
 					>
 						{isLoading ? (
 							<>
@@ -61,7 +61,7 @@ export default function LoginPage() {
 						</div>
 					</div>
 
-					<div className="text-center text-sm text-slate-400">
+					<div className="text-center text-xs md:text-sm text-slate-400">
 						با ورود، شما{' '}
 						<Link href="#" className="text-emerald-400 hover:text-emerald-300 underline">
 							قوانین استفاده
@@ -74,8 +74,8 @@ export default function LoginPage() {
 					</div>
 				</div>
 
-				<div className="mt-8 text-center">
-					<Link href="/" className="text-sm text-slate-400 hover:text-white transition-colors">
+				<div className="mt-6 md:mt-8 text-center">
+					<Link href="/" className="text-xs md:text-sm text-slate-400 hover:text-white transition-colors">
 						بازگشت به صفحه اصلی
 					</Link>
 				</div>
