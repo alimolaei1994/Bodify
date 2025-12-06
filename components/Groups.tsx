@@ -1,13 +1,13 @@
 'use client'
 
-import { Card } from './ui/card'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { Avatar, AvatarFallback } from './ui/avatar'
-import { Progress } from './ui/progress'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Progress } from '@/components/ui/progress'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Users, Crown, Trophy, Flame, TrendingUp, MessageCircle, Calendar, Target, Dna, Plus } from 'lucide-react'
-import { ImageWithFallback } from './figma/ImageWithFallback'
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback'
 
 const myGroups = [
 	{
@@ -195,7 +195,7 @@ export function Groups() {
 
 			{/* Active Groups */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-				{myGroups.map((group) => (
+				{myGroups.map(group => (
 					<Card key={group.id} className="p-6 hover:shadow-lg transition-shadow">
 						<div className="flex items-start justify-between mb-4">
 							<div className="flex items-center gap-3">
@@ -249,7 +249,7 @@ export function Groups() {
 				<h3 className="mb-4">Suggested Groups for You</h3>
 				<p className="text-slate-600 text-sm mb-4">Based on your genetic profile and training preferences</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-					{suggestedGroups.map((group) => (
+					{suggestedGroups.map(group => (
 						<div key={group.id} className="p-5 border-2 border-slate-200 rounded-lg hover:border-emerald-500 transition-colors">
 							<div className="flex items-start gap-3 mb-3">
 								<div className={`w-10 h-10 bg-${group.color}-100 rounded-full flex items-center justify-center`}>
@@ -339,10 +339,11 @@ export function Groups() {
 
 								<h4 className="text-amber-900 mb-3">Leaderboard</h4>
 								<div className="space-y-2">
-									{groupChallenge.leaderboard.map((participant) => (
+									{groupChallenge.leaderboard.map(participant => (
 										<div
 											key={participant.rank}
-											className={`flex items-center gap-3 p-3 rounded-lg ${participant.isUser ? 'bg-emerald-100 border-2 border-emerald-500' : 'bg-white'}`}>
+											className={`flex items-center gap-3 p-3 rounded-lg ${participant.isUser ? 'bg-emerald-100 border-2 border-emerald-500' : 'bg-white'}`}
+										>
 											<div
 												className={`w-8 h-8 rounded-full flex items-center justify-center ${
 													participant.rank === 1
@@ -352,7 +353,8 @@ export function Groups() {
 														: participant.rank === 3
 														? 'bg-orange-600 text-white'
 														: 'bg-slate-300 text-slate-700'
-												}`}>
+												}`}
+											>
 												{participant.rank}
 											</div>
 											<Avatar className="w-10 h-10">
@@ -428,7 +430,7 @@ export function Groups() {
 				<div className="space-y-4">
 					<Card className="p-6">
 						<h3 className="mb-4">Group Members</h3>
-						<p className="text-slate-600 text-sm mb-4">24 members • {groupMembers.filter((m) => m.status === 'online').length} online</p>
+						<p className="text-slate-600 text-sm mb-4">24 members • {groupMembers.filter(m => m.status === 'online').length} online</p>
 						<div className="space-y-3">
 							{groupMembers.map((member, index) => (
 								<div key={index} className={`flex items-center gap-3 p-3 rounded-lg ${member.isUser ? 'bg-emerald-50' : 'bg-slate-50'}`}>

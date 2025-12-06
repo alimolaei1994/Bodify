@@ -3,8 +3,8 @@ import { Sidebar } from '@/components/Sidebar'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-	title: 'AthleteDNA - Genetics Fitness Social App',
-	description: 'Genetics Fitness Social App'
+	title: 'RiseStyle - اپلیکیشن اجتماعی تناسب اندام ژنتیکی',
+	description: 'اپلیکیشن اجتماعی تناسب اندام ژنتیکی'
 }
 
 export default function RootLayout({
@@ -13,11 +13,15 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="fa" dir="rtl">
+			<head>
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirfont@v30.1.0/dist/font-face.css" />
+			</head>
+
 			<body>
 				<div className="min-h-screen bg-slate-50">
 					<Sidebar />
-					<div className="ml-64 p-8">{children}</div>
+					<div className="mr-64 p-8">{children}</div>
 				</div>
 			</body>
 		</html>

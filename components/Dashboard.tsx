@@ -1,16 +1,16 @@
 'use client'
 
-import { Card } from './ui/card'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Activity, Flame, Heart, Timer, Trophy, TrendingUp, Crown, Medal, Zap, Watch, Wind } from 'lucide-react'
-import { Progress } from './ui/progress'
+import { Progress } from '@/components/ui/progress'
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import { Avatar, AvatarFallback } from './ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 
 const weeklyData = [
 	{
-		day: 'Mon',
+		day: 'دوشنبه',
 		calories: 520,
 		heartRate: 142,
 		duration: 45,
@@ -18,7 +18,7 @@ const weeklyData = [
 		vo2max: 48
 	},
 	{
-		day: 'Tue',
+		day: 'سه‌شنبه',
 		calories: 680,
 		heartRate: 155,
 		duration: 60,
@@ -26,7 +26,7 @@ const weeklyData = [
 		vo2max: 49
 	},
 	{
-		day: 'Wed',
+		day: 'چهارشنبه',
 		calories: 450,
 		heartRate: 138,
 		duration: 40,
@@ -34,7 +34,7 @@ const weeklyData = [
 		vo2max: 47
 	},
 	{
-		day: 'Thu',
+		day: 'پنج‌شنبه',
 		calories: 820,
 		heartRate: 168,
 		duration: 75,
@@ -42,7 +42,7 @@ const weeklyData = [
 		vo2max: 51
 	},
 	{
-		day: 'Fri',
+		day: 'جمعه',
 		calories: 590,
 		heartRate: 148,
 		duration: 50,
@@ -50,7 +50,7 @@ const weeklyData = [
 		vo2max: 48
 	},
 	{
-		day: 'Sat',
+		day: 'شنبه',
 		calories: 920,
 		heartRate: 172,
 		duration: 90,
@@ -58,7 +58,7 @@ const weeklyData = [
 		vo2max: 52
 	},
 	{
-		day: 'Sun',
+		day: 'یکشنبه',
 		calories: 340,
 		heartRate: 128,
 		duration: 35,
@@ -88,7 +88,7 @@ const weeklyLeaderboard = [
 	},
 	{
 		rank: 3,
-		name: 'You (John Doe)',
+		name: 'شما (جان دو)',
 		avatar: 'JD',
 		points: 2650,
 		badge: '⚡',
@@ -145,43 +145,43 @@ const weeklyLeaderboard = [
 
 const activeChallenges = [
 	{
-		title: 'Calorie Burn Champion',
-		description: 'Who burns the most calories this week?',
+		title: 'قهرمان سوزاندن کالری',
+		description: 'چه کسی بیشترین کالری را این هفته می‌سوزاند؟',
 		icon: Flame,
 		color: 'orange',
-		currentLeader: 'Sarah Martinez',
+		currentLeader: 'سارا مارتینز',
 		yourRank: 3,
 		yourProgress: 4980,
 		leaderProgress: 5420,
-		endsIn: '2 days',
-		prize: '500 points',
-		unit: 'kcal'
+		endsIn: '۲ روز',
+		prize: '۵۰۰ امتیاز',
+		unit: 'کالری'
 	},
 	{
-		title: 'TRIMP Master',
-		description: 'Highest training impulse score this week',
+		title: 'استاد TRIMP',
+		description: 'بالاترین امتیاز TRIMP این هفته',
 		icon: Activity,
 		color: 'purple',
-		currentLeader: 'Sarah Martinez',
+		currentLeader: 'سارا مارتینز',
 		yourRank: 2,
 		yourProgress: 671,
 		leaderProgress: 685,
-		endsIn: '2 days',
-		prize: '450 points',
+		endsIn: '۲ روز',
+		prize: '۴۵۰ امتیاز',
 		unit: 'TRIMP'
 	},
 	{
-		title: 'VO2 Max Elite',
-		description: 'Best average VO2 max performance',
+		title: 'نخبه VO2 Max',
+		description: 'بهترین عملکرد متوسط VO2 max',
 		icon: Wind,
 		color: 'blue',
-		currentLeader: 'Sarah Martinez',
+		currentLeader: 'سارا مارتینز',
 		yourRank: 4,
 		yourProgress: 50,
 		leaderProgress: 54,
-		endsIn: '2 days',
-		prize: '400 points',
-		unit: 'ml/kg/min'
+		endsIn: '۲ روز',
+		prize: '۴۰۰ امتیاز',
+		unit: 'میلی‌لیتر/کیلوگرم/دقیقه'
 	}
 ]
 
@@ -190,14 +190,14 @@ export function Dashboard() {
 		<div className="space-y-6">
 			<div className="flex items-center justify-between">
 				<div>
-					<h1>Welcome back, John!</h1>
-					<p className="text-slate-600">Your weekly performance and challenges</p>
+					<h1>خوش آمدید، جان!</h1>
+					<p className="text-slate-600">عملکرد هفتگی و چالش‌های شما</p>
 				</div>
 				<div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-lg border border-emerald-200">
 					<Watch className="w-5 h-5 text-emerald-600" />
 					<div>
-						<p className="text-emerald-900 text-sm">Apple Watch Connected</p>
-						<p className="text-emerald-600 text-xs">Synced 2 min ago</p>
+						<p className="text-emerald-900 text-sm">اپل واچ متصل است</p>
+						<p className="text-emerald-600 text-xs">همگام‌سازی ۲ دقیقه پیش</p>
 					</div>
 				</div>
 			</div>
@@ -207,9 +207,9 @@ export function Dashboard() {
 				<Card className="p-6">
 					<div className="flex items-center justify-between">
 						<div>
-							<p className="text-slate-600 text-sm">Total Calories</p>
-							<p className="text-slate-900">4,320 kcal</p>
-							<p className="text-emerald-600 text-xs mt-1">+12% vs last week</p>
+							<p className="text-slate-600 text-sm">کل کالری</p>
+							<p className="text-slate-900">۴,۳۲۰ کالری</p>
+							<p className="text-emerald-600 text-xs mt-1">+۱۲٪ نسبت به هفته قبل</p>
 						</div>
 						<div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
 							<Flame className="w-6 h-6 text-orange-600" />
@@ -220,9 +220,9 @@ export function Dashboard() {
 				<Card className="p-6">
 					<div className="flex items-center justify-between">
 						<div>
-							<p className="text-slate-600 text-sm">Avg Heart Rate</p>
-							<p className="text-slate-900">152 bpm</p>
-							<p className="text-emerald-600 text-xs mt-1">+5% vs last week</p>
+							<p className="text-slate-600 text-sm">میانگین ضربان قلب</p>
+							<p className="text-slate-900">۱۵۲ ضربه در دقیقه</p>
+							<p className="text-emerald-600 text-xs mt-1">+۵٪ نسبت به هفته قبل</p>
 						</div>
 						<div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
 							<Heart className="w-6 h-6 text-red-600" />
@@ -233,9 +233,9 @@ export function Dashboard() {
 				<Card className="p-6">
 					<div className="flex items-center justify-between">
 						<div>
-							<p className="text-slate-600 text-sm">Workout Time</p>
-							<p className="text-slate-900">395 min</p>
-							<p className="text-emerald-600 text-xs mt-1">+8% vs last week</p>
+							<p className="text-slate-600 text-sm">زمان تمرین</p>
+							<p className="text-slate-900">۳۹۵ دقیقه</p>
+							<p className="text-emerald-600 text-xs mt-1">+۸٪ نسبت به هفته قبل</p>
 						</div>
 						<div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
 							<Timer className="w-6 h-6 text-blue-600" />
@@ -247,8 +247,8 @@ export function Dashboard() {
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-slate-600 text-sm">TRIMP</p>
-							<p className="text-slate-900">671</p>
-							<p className="text-emerald-600 text-xs mt-1">+15% vs last week</p>
+							<p className="text-slate-900">۶۷۱</p>
+							<p className="text-emerald-600 text-xs mt-1">+۱۵٪ نسبت به هفته قبل</p>
 						</div>
 						<div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
 							<Activity className="w-6 h-6 text-purple-600" />
@@ -260,8 +260,8 @@ export function Dashboard() {
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-slate-600 text-sm">VO2 Max</p>
-							<p className="text-slate-900">50 ml/kg/min</p>
-							<p className="text-emerald-600 text-xs mt-1">+4% vs last week</p>
+							<p className="text-slate-900">۵۰ میلی‌لیتر/کیلوگرم/دقیقه</p>
+							<p className="text-emerald-600 text-xs mt-1">+۴٪ نسبت به هفته قبل</p>
 						</div>
 						<div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center">
 							<Wind className="w-6 h-6 text-teal-600" />
@@ -273,7 +273,7 @@ export function Dashboard() {
 			{/* Analytics Charts */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 				<Card className="p-6">
-					<h3 className="mb-4">Calories & Heart Rate</h3>
+					<h3 className="mb-4">کالری و ضربان قلب</h3>
 					<ResponsiveContainer width="100%" height={250}>
 						<AreaChart data={weeklyData}>
 							<CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -286,7 +286,7 @@ export function Dashboard() {
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="mb-4">Workout Duration</h3>
+					<h3 className="mb-4">مدت زمان تمرین</h3>
 					<ResponsiveContainer width="100%" height={250}>
 						<BarChart data={weeklyData}>
 							<CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -299,7 +299,7 @@ export function Dashboard() {
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="mb-4">TRIMP Score</h3>
+					<h3 className="mb-4">امتیاز TRIMP</h3>
 					<ResponsiveContainer width="100%" height={250}>
 						<LineChart data={weeklyData}>
 							<CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -312,7 +312,7 @@ export function Dashboard() {
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="mb-4">VO2 Max Progression</h3>
+					<h3 className="mb-4">پیشرفت VO2 Max</h3>
 					<ResponsiveContainer width="100%" height={250}>
 						<AreaChart data={weeklyData}>
 							<CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -329,12 +329,12 @@ export function Dashboard() {
 			<Card className="p-6">
 				<div className="flex items-center justify-between mb-6">
 					<div>
-						<h3>Weekly Challenges</h3>
-						<p className="text-slate-600 text-sm">Compete with others and earn points</p>
+						<h3>چالش‌های هفتگی</h3>
+						<p className="text-slate-600 text-sm">با دیگران رقابت کنید و امتیاز کسب کنید</p>
 					</div>
 					<Badge className="bg-amber-100 text-amber-900 hover:bg-amber-100">
 						<Trophy className="w-3 h-3 mr-1" />
-						Ends in 2 days
+						پایان در ۲ روز
 					</Badge>
 				</div>
 
@@ -348,7 +348,8 @@ export function Dashboard() {
 								key={index}
 								className={`p-5 border-2 rounded-lg hover:shadow-md transition-all ${
 									challenge.yourRank === 1 ? 'border-amber-400 bg-amber-50' : 'border-slate-200 bg-white'
-								}`}>
+								}`}
+							>
 								<div className="flex items-start justify-between mb-3">
 									<div className={`w-12 h-12 bg-${challenge.color}-100 rounded-full flex items-center justify-center`}>
 										<Icon className={`w-6 h-6 text-${challenge.color}-600`} />
@@ -361,13 +362,13 @@ export function Dashboard() {
 
 								<div className="space-y-3">
 									<div className="flex justify-between text-sm">
-										<span className="text-slate-600">Your Rank</span>
+										<span className="text-slate-600">رتبه شما</span>
 										<Badge variant={challenge.yourRank <= 3 ? 'default' : 'secondary'}>#{challenge.yourRank}</Badge>
 									</div>
 
 									<div className="space-y-1">
 										<div className="flex justify-between text-sm">
-											<span className="text-slate-600">Progress</span>
+											<span className="text-slate-600">پیشرفت</span>
 											<span className="text-slate-900">
 												{challenge.yourProgress.toLocaleString()} {challenge.unit}
 											</span>
@@ -376,13 +377,13 @@ export function Dashboard() {
 											<div className={`h-full bg-${challenge.color}-500 transition-all`} style={{ width: `${progressPercent}%` }} />
 										</div>
 										<p className="text-slate-500 text-xs">
-											Leader: {challenge.leaderProgress.toLocaleString()} {challenge.unit}
+											رتبه اول: {challenge.leaderProgress.toLocaleString()} {challenge.unit}
 										</p>
 									</div>
 
 									<div className="pt-3 border-t border-slate-200">
 										<div className="flex justify-between items-center text-sm">
-											<span className="text-slate-600">Prize</span>
+											<span className="text-slate-600">جایزه</span>
 											<span className="text-emerald-600">{challenge.prize}</span>
 										</div>
 									</div>
@@ -398,16 +399,16 @@ export function Dashboard() {
 				<Card className="lg:col-span-2 p-6">
 					<div className="flex items-center justify-between mb-6">
 						<div>
-							<h3>Weekly Leaderboard</h3>
-							<p className="text-slate-600 text-sm">Top performers this week</p>
+							<h3>جدول رده‌بندی هفتگی</h3>
+							<p className="text-slate-600 text-sm">بهترین عملکردهای این هفته</p>
 						</div>
 						<Button variant="outline" size="sm">
-							View All Rankings
+							مشاهده همه رتبه‌ها
 						</Button>
 					</div>
 
 					<div className="space-y-2">
-						{weeklyLeaderboard.map((user) => (
+						{weeklyLeaderboard.map(user => (
 							<div
 								key={user.rank}
 								className={`flex items-center gap-4 p-4 rounded-lg transition-all ${
@@ -416,7 +417,8 @@ export function Dashboard() {
 										: user.rank <= 3
 										? 'bg-amber-50 border border-amber-200'
 										: 'bg-slate-50 border border-slate-200'
-								}`}>
+								}`}
+							>
 								<div className="flex items-center gap-3 flex-1">
 									<div className="relative">
 										{user.rank === 1 && <Crown className="w-5 h-5 text-amber-500 absolute -top-2 -right-2" />}
@@ -429,7 +431,8 @@ export function Dashboard() {
 													: user.rank === 3
 													? 'bg-orange-600 text-white'
 													: 'bg-slate-300 text-slate-700'
-											}`}>
+											}`}
+										>
 											{user.rank}
 										</div>
 									</div>
@@ -458,34 +461,34 @@ export function Dashboard() {
 				</Card>
 
 				<Card className="p-6">
-					<h3 className="mb-4">Your Performance</h3>
+					<h3 className="mb-4">عملکرد شما</h3>
 					<div className="space-y-4">
 						<div className="p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-lg border border-emerald-200">
 							<div className="flex items-center gap-2 mb-2">
 								<TrendingUp className="w-5 h-5 text-emerald-600" />
-								<span className="text-emerald-900">Great Progress!</span>
+								<span className="text-emerald-900">پیشرفت عالی!</span>
 							</div>
-							<p className="text-emerald-700 text-sm">You're in the top 10% of all users this week. Keep pushing!</p>
+							<p className="text-emerald-700 text-sm">شما در ۱۰٪ برتر کاربران این هفته هستید. ادامه دهید!</p>
 						</div>
 
 						<div>
 							<div className="flex justify-between text-sm mb-2">
-								<span className="text-slate-600">Weekly Goal Progress</span>
-								<span className="text-slate-900">82%</span>
+								<span className="text-slate-600">پیشرفت هدف هفتگی</span>
+								<span className="text-slate-900">۸۲٪</span>
 							</div>
 							<Progress value={82} className="h-3" />
-							<p className="text-slate-500 text-xs mt-1">1,200 more calories to goal</p>
+							<p className="text-slate-500 text-xs mt-1">۱,۲۰۰ کالری دیگر تا هدف</p>
 						</div>
 
 						<div className="space-y-2">
-							<h4 className="text-slate-900">Recent Achievements</h4>
+							<h4 className="text-slate-900">دستاوردهای اخیر</h4>
 							{[
-								{ icon: '🔥', text: '7 Day Streak', time: 'Today' },
-								{ icon: '🏆', text: 'Top 5 Finisher', time: 'Yesterday' },
+								{ icon: '🔥', text: '۷ روز متوالی', time: 'امروز' },
+								{ icon: '🏆', text: 'رتبه ۵ برتر', time: 'دیروز' },
 								{
 									icon: '⚡',
-									text: '2,000 Points Milestone',
-									time: '2 days ago'
+									text: 'دستیابی به ۲,۰۰۰ امتیاز',
+									time: '۲ روز پیش'
 								}
 							].map((achievement, index) => (
 								<div key={index} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
@@ -500,7 +503,7 @@ export function Dashboard() {
 
 						<Button className="w-full bg-emerald-600 hover:bg-emerald-700">
 							<Zap className="w-4 h-4 mr-2" />
-							Sync Watch Now
+							همگام‌سازی ساعت
 						</Button>
 					</div>
 				</Card>
@@ -512,17 +515,18 @@ export function Dashboard() {
 					<div className="flex-1">
 						<div className="flex items-center gap-2 mb-2">
 							<Crown className="w-6 h-6 text-purple-600" />
-							<h3 className="text-purple-900">Unlock Your Genetic Potential</h3>
+							<h3 className="text-purple-900">پتانسیل ژنتیکی خود را آزاد کنید</h3>
 						</div>
 						<p className="text-purple-700 mb-4">
-							Get personalized workout and nutrition plans based on your DNA. Join exclusive groups with similar genetic traits and get expert guidance.
+							برنامه‌های تمرینی و تغذیه شخصی‌سازی شده بر اساس DNA خود را دریافت کنید. به گروه‌های انحصاری با ویژگی‌های ژنتیکی مشابه بپیوندید و راهنمایی متخصص دریافت
+							کنید.
 						</p>
 						<ul className="space-y-2 mb-6">
 							{[
-								'Genetic testing kit delivered to your door',
-								'Detailed DNA analysis for fitness & nutrition',
-								'Personalized plans from expert trainers & nutritionists',
-								'Exclusive community groups with similar traits'
+								'کیت تست ژنتیک درب منزل شما',
+								'تحلیل دقیق DNA برای تناسب اندام و تغذیه',
+								'برنامه‌های شخصی از مربیان و متخصصان تغذیه',
+								'گروه‌های انحصاری با ویژگی‌های مشابه'
 							].map((feature, index) => (
 								<li key={index} className="flex items-center gap-2 text-purple-900 text-sm">
 									<Medal className="w-4 h-4 text-purple-600" />
@@ -530,7 +534,7 @@ export function Dashboard() {
 								</li>
 							))}
 						</ul>
-						<Button className="bg-purple-600 hover:bg-purple-700">Upgrade to Premium - Start Your DNA Test</Button>
+						<Button className="bg-purple-600 hover:bg-purple-700">ارتقا به نسخه پریمیوم - شروع تست DNA</Button>
 					</div>
 					<div className="hidden lg:block text-8xl ml-8">🧬</div>
 				</div>

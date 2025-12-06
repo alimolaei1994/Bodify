@@ -1,0 +1,95 @@
+# Cursor Rules for RiseStyle Project
+
+## Git Workflow
+
+هر زمان که تغییری در پروژه ایجاد می‌کنی، باید این مراحل را دنبال کنی:
+
+### 0. Build & Lint (قبل از Commit)
+- **همیشه** قبل از commit، build بگیر و خطاها را رفع کن:
+  ```bash
+  npm run build
+  ```
+- اگر خطای build وجود داشت، **حتماً** آن را رفع کن قبل از commit
+- خطاهای lint را هم بررسی و رفع کن:
+  ```bash
+  npm run lint
+  ```
+- **هرگز** با خطای build یا lint commit نکن
+
+### 1. Commit Changes
+- همیشه قبل از commit، تمام فایل‌های تغییر یافته را add کن
+- از پیام commit معنادار استفاده کن که تغییرات را به وضوح توضیح دهد
+- فرمت: `type: description` (مثلاً: `feat: اضافه کردن لوگوی RiseStyle`)
+
+### 2. Update Version
+- بعد از هر commit، ورژن را در `package.json` به‌روز کن
+- از Semantic Versioning استفاده کن:
+  - **MAJOR** (x.0.0): تغییرات breaking
+  - **MINOR** (0.x.0): ویژگی‌های جدید
+  - **PATCH** (0.0.x): باگ فیکس‌ها و تغییرات کوچک
+
+### 3. Update CHANGELOG.md
+- همیشه بعد از commit، CHANGELOG.md را به‌روز کن
+- تغییرات را در بخش `[Unreleased]` یا ورژن جدید اضافه کن
+- از فرمت زیر استفاده کن:
+  ```markdown
+  ## [Version] - YYYY-MM-DD
+  
+  ### Added
+  - توضیح تغییرات جدید
+  
+  ### Changed
+  - توضیح تغییرات موجود
+  
+  ### Fixed
+  - توضیح باگ فیکس‌ها
+  ```
+
+## Project Conventions
+
+- همه import ها باید از `@/` استفاده کنند (نه relative paths)
+- همه متن‌ها باید فارسی باشند
+- فونت استفاده شده: Vazir
+- جهت صفحه: RTL
+- نام اپلیکیشن: RiseStyle
+
+## Code Style
+
+- از Prettier برای فرمت کردن کد استفاده کن
+- از TypeScript برای type safety استفاده کن
+- کامپوننت‌ها باید در `components/` قرار بگیرند
+- صفحات باید در `app/` قرار بگیرند (Next.js App Router)
+
+## Type Definitions
+
+- **همیشه** type های کامپوننت‌ها را در پوشه `types/` قرار بده و جدا نگه دار
+- **برای هر کامپوننت، یک فایل type جداگانه** در `types/` بساز
+- از نام‌گذاری `ComponentName.types.ts` استفاده کن
+- **هر کامپوننت باید فایل type مخصوص به خودش را داشته باشد** (نه یک فایل مشترک)
+- type ها را export کن و در کامپوننت import کن:
+  ```typescript
+  // types/Dashboard.types.ts
+  export interface DashboardProps {
+    // ...
+  }
+  
+  // types/Sidebar.types.ts
+  export interface SidebarProps {
+    // ...
+  }
+  
+  // components/Dashboard.tsx
+  import type { DashboardProps } from '@/types/Dashboard.types'
+  
+  // components/Sidebar.tsx
+  import type { SidebarProps } from '@/types/Sidebar.types'
+  ```
+- **هرگز** type ها را inline در کامپوننت ننویس، همیشه جدا کن
+- **هرگز** type های چند کامپوننت را در یک فایل ننویس، هر کامپوننت فایل type خودش را داشته باشد
+
+## Important Notes
+
+- **همیشه** قبل از commit: Build → Fix Errors → Commit → Update Version → Update CHANGELOG
+- هرگز با خطای build یا lint commit نکن
+- هرگز بدون commit کردن تغییرات را رها نکن
+- قبل از push کردن، مطمئن شو که همه چیز commit شده است

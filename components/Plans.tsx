@@ -1,10 +1,10 @@
 'use client'
 
-import { Card } from './ui/card'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
-import { Avatar, AvatarFallback } from './ui/avatar'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Dumbbell, Apple, Calendar, Clock, Target, User, CheckCircle, Crown, Lock, Download, MessageCircle } from 'lucide-react'
 
 const workoutPlan = {
