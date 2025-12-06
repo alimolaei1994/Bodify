@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.3.0
+- ترجمه تمام متن‌های کامپوننت‌ها به فارسی
+- فارسی‌سازی Genetics component
+- فارسی‌سازی Plans component
+- فارسی‌سازی Groups component
+- فارسی‌سازی Profile component
+
 ## 0.2.0
 - اضافه کردن فایل `.cursorrules` با قوانین workflow کامل
 - اضافه کردن لوگوی RiseStyle به Sidebar
