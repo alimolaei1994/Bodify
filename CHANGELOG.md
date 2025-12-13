@@ -1,6 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+- Upgraded the packages
+
 ## 0.4.3
 - Fixed npm i rule to run after version update instead of before commit
 
